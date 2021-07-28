@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head id="headSection">
+
+</head>
+
+<body class="font-muli theme-cyan gradient">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+        </div>
+    </div>
+
+    <div id="main_content">
+        <!-- Start Main top header -->
+        <div id="header_top" class="header_top">
+            <div class="container">
+
+                <div class="hleft">
+                    <a class="header-brand" href="index.html"><i class="fa fa-graduation-cap brand-logo"></i></a>
+                    <div class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
+                    </div>
+                </div>
+                <div class="hright">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Main leftbar navigation -->
+        <div id="left-sidebar" class="sidebar">
+
+        </div>
+        <!-- Start project content area -->
+        <div class="page">
+            <!-- Start Page header -->
+            <div class="section-body" id="page_top">
+
+            </div>
+            <!-- Start Page title and tab -->
+            <div class="section-body">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between align-items-center ">
+                        <div class="header-action">
+                            <h1 class="page-title">Students</h1>
+                            <ol class="breadcrumb page-breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">SSAGRAWAL</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Students</li>
+                            </ol>
+                        </div>
+                        <ul class="nav nav-tabs page-header-tab">
+                            <li class="nav-item"><a class="nav-link" href="students_view.html">List View</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link"  href="std_reg.html">Registration</a></li> -->
+                            <li class="nav-item"><a class="nav-link active" href="students_info.html">Student Information</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section-body mt-4">
+                <div class="container-fluid">
+
+                    <div class="tab-pane" id="Student-add">
+                        <div class="row clearfix">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Basic Information</h3>
+                                        <div class="card-options ">
+                                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                            <!--<a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>-->
+                                        </div>
+                                    </div>
+                                    <form class="card-body" id="form_register" action="" method="">
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Student Registration ID<span class="text-danger"></span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="registration_id" id="registration_id" class="form-control" placeholder="112233" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">First Name<span class="text-danger"></span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="first_name" name="first_name" class="form-control" aria-describedby="emailHelp" placeholder="First Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Last Name<span class="text-danger"></span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="last_name" name="last_name" class="form-control" aria-describedby="emailHelp" placeholder="Last Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Email<span class="text-danger"></span></label>
+                                            <div class="col-md-9">
+                                                <input type="email" id="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Mobile Number<span class="text-danger"></span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="mobile" name="mobile" class="form-control" aria-describedby="emailHelp" placeholder="Mobile Number" required>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                    <form class="card-body" id="form_student_info">
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Father Name <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="father_name" id="father_name" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Mother Name <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="mother_name" id="mother_name" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Date Of Birth  <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="date" name="date_of_birth" id="date_of_birth" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Nationality <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="nationality" id="nationality" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Gender <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <select class="form-control input-height" name="gender" id="gender" required>
+                                                    <option value="">Select...</option>
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Category <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <select class="form-control input-height" name="category" id="category" required>
+                                                    <option value="">Select...</option>
+                                                    <option value="open">Open</option>
+                                                    <option value="obc">OBC/SEBC</option>
+                                                    <option value="sc">SC</option>
+                                                    <option value="st">ST</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Present Address <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="present_address" id="present_address" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Permanent Address <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="parmanant_address" id="parmanant_address" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Birth Place <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="birth_place" id="birth_place" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">District <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="district" id="district" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Taluka <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="taluka" id="taluka" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Religion <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="religion" id="religion" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Cast <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="cast" id="cast" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Marital Status <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <select class="form-control input-height" name="marital_status" id="marital_status" required>
+                                                    <option value="">Select...</option>
+                                                    <option value="married">Married</option>
+                                                    <option value="unmarried">Unmarried</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Annual Income <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="annual_income" id="annual_income" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Father Occupation <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="father_occupation" id="father_occupation" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Parents Mobile No. <span class="text-danger">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="parents_mobile" id="parents_mobile" class="form-control" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Upload Photo</label>
+                                            <div class="col-md-9">
+                                                <input type="file" name="photo" id="photo" class="dropify" required>
+                                                <small id="fileHelp" class="form-text text-muted">Kindly upload you passport size photograph</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12">
+                                            <button id="btn_submit" type="submit" class="btn btn-primary">SUBMIT</button>
+                                            <a type="button" href="students_apply_for_course.html" class="btn btn-outline-secondary">Next -> Select Course</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Start Main project js, jQuery, Bootstrap -->
+    <script src="assets/bundles/lib.vendor.bundle.js"></script>
+
+    <!-- Start Plugin Js -->
+    <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/plugins/dropify/js/dropify.min.js"></script>
+    <script src="assets/bundles/summernote.bundle.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Start project main js  and page js -->
+    <script src="assets/js/core.js"></script>
+    <script src="assets/js/form/dropify.js"></script>
+    <script src="assets/js/page/summernote.js"></script>
+    <script src="assets/js/page/dialogs.js"></script>
+    <script src="header.js"></script>
+    <script>
+        $(document).ready(async() => {
+            let url = "http://localhost:3000"
+            if (!sessionStorage.length > 0) {
+                await sessionStorage.clear()
+                window.location.href = "../login.html"
+            }
+
+            let userData = JSON.parse(sessionStorage.getItem('user'))
+            console.log(userData.name);
+            $('#user_name').html(userData.name)
+            await $.ajax(`${url}/student/getRegistration`, {
+                type: 'POST', // http method
+                data: {
+                    "email": userData.email
+                },
+                success: async function(innerData, status, xhr) {
+
+                    $("#registration_id").val(innerData[0].id)
+                    $("#first_name").val(innerData[0].first_name)
+                    $("#last_name").val(innerData[0].last_name)
+                    $("#email").val(innerData[0].email)
+                    $("#mobile").val(innerData[0].mobile)
+
+                    //  window.location.href = "student/std_info.html"
+                },
+                error: function(jqXhr, textStatus, errorMessage) {
+                    console.log('locho', jqXhr.responseText)
+                }
+
+            });
+            await $.ajax(`${url}/student/getStudentInfo`, {
+                type: 'POST', // http method
+                data: {
+                    "student_registration_id": userData.id
+                },
+                success: async function(data, status, xhr) {
+                    if (Array.isArray(data)) {
+
+                        let jsonObject = data[0]
+                        $('#form_student_info input[id]').map(function() {
+                            let inputControlId = this.id
+                            Object.keys(jsonObject).forEach(key => {
+                                // console.log(jsonObject[key]); //values 
+                                if (key == inputControlId) {
+                                    $(`#${inputControlId}`).val(jsonObject[key])
+                                }
+                            })
+                            let date = new Date(jsonObject.date_of_birth).toLocaleDateString()
+                            var datearray = date.split("/");
+                            var newdate = datearray[2] + '-' + datearray[0] + '-' + datearray[1];
+                            $('#date_of_birth').val(newdate);
+                            $('#gender').val(jsonObject.gender)
+                            $('#category').val(jsonObject.category)
+                            $('#marital_status').val(jsonObject.marital_status)
+                            $('#btn_submit').attr("disabled", "disabled")
+                        })
+                    }
+                    //  window.location.href = "student/std_info.html"
+                },
+                error: function(jqXhr, textStatus, errorMessage) {
+                    console.log('locho', jqXhr.responseText, textStatus, errorMessage)
+                }
+            });
+
+            $("#form_student_info").submit(async(e) => {
+                e.preventDefault()
+                var formdata = $("#form_student_info").serializeArray();
+                var data = {};
+                formdata.forEach(element => {
+                    data[element.name] = element.value;
+                });
+                data.student_registration_id = userData.id
+                await $.ajax(`${url}/student/addInfo`, {
+                    type: 'POST', // http method
+                    data: data, // data to submit
+                    success: function(data, status, xhr) {
+                        alert("Student Personal Informaition added Successfully.")
+                            //window.location.href = "login.html";
+                        window.location.href = "students_apply_for_course.html"
+                    },
+                    error: function(jqXhr, textStatus, errorMessage) {
+                        console.log(jqXhr.responseText)
+                    }
+                });
+            })
+        })
+    </script>
+</body>
+
+</html>

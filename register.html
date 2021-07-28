@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>:: SSAgrawal :: Register</title>
+    <!-- Bootstrap Core and vandor -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <!-- Core css -->
+    <link rel="stylesheet" href="assets/css/style.min.css" />
+    <link rel="stylesheet" href="assets/css/default.css" />
+
+</head>
+
+<body class="font-muli theme-cyan gradient">
+
+    <div class="auth option2">
+        <div class="auth_left">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center">
+                        <div class="card-title mt-3">S S Agrawal ERP System</div>
+                        <a class="header-brand" href="index.html"><i class="fa fa-graduation-cap brand-logo"></i></a>
+                        <div class="card-title">Create new account</div>
+                    </div>
+                    <form class="card-body" id="form_register" action="" method="">
+                        <div class="form-group">
+                            <input type="text" id="first_name" name="first_name" class="form-control" aria-describedby="emailHelp" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="last_name" name="last_name" class="form-control" aria-describedby="emailHelp" placeholder="Last Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="mobile" name="mobile" class="form-control" aria-describedby="emailHelp" placeholder="Mobile Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="password" name="password" class="form-control" aria-describedby="emailHelp" placeholder="Password" required>
+                        </div>
+                        <div class="form-group">
+
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" id="btn_register" class="btn btn-primary btn-block">Register Now</button>
+                            <div class="text-muted mt-4">Already have account? <a href="login.html">Sign in</a></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Main project js, jQuery, Bootstrap -->
+    <script src="assets/bundles/lib.vendor.bundle.js"></script>
+
+    <!-- Start project main js  and page js -->
+    <script src="assets/js/core.js"></script>
+    <script>
+        $(document).ready(() => {
+            let url = "http://localhost:3000"
+            $("#form_register").submit(async(e) => {
+                e.preventDefault()
+                var formdata = $("#form_register").serializeArray();
+                var data = {};
+                formdata.forEach(element => {
+                    data[element.name] = element.value;
+                });
+
+                await $.ajax(`${url}/user/signup`, {
+                    type: 'POST', // http method
+                    data: data, // data to submit
+                    success: function(data, status, xhr) {
+                        alert("Registration Completed Successfully. Login Using your E-mail Id and Password. ")
+                        window.location.href = "login.html";
+                    },
+                    error: function(jqXhr, textStatus, errorMessage) {
+                        console.log(jqXhr.responseText)
+                    }
+                });
+
+            })
+
+        })
+    </script>
+
+</body>
+
+</html>

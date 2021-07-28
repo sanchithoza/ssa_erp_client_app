@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head id="headSection">
+    <!--code in header.js file-->
+</head>
+
+<body class="font-muli theme-cyan gradient">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+        </div>
+    </div>
+
+    <div id="main_content">
+        <!-- Start Main top header -->
+        <div id="header_top" class="header_top">
+            <div class="container">
+
+                <div class="hleft">
+                    <a class="header-brand" href="index.html"><i class="fa fa-graduation-cap brand-logo"></i></a>
+                    <div class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
+                    </div>
+                </div>
+                <div class="hright">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Main leftbar navigation -->
+        <div id="left-sidebar" class="sidebar">
+            <!--code in header.js file-->
+        </div>
+        <!-- Start project content area -->
+        <div class="page">
+            <!-- Start Page header -->
+            <div class="section-body" id="page_top">
+                <!--code in header.js file-->
+            </div>
+            <!-- Start Page title and tab -->
+            <div class="section-body">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between align-items-center ">
+                        <div class="header-action">
+                            <h1 class="page-title">Institutes</h1>
+                            <ol class="breadcrumb page-breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">SSAGRAWAL</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Institutes</li>
+                            </ol>
+                        </div>
+                        <ul class="nav nav-tabs page-header-tab">
+                            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Courses-all">List View</a></li>
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Courses-add">Add</a></li>
+                            <li class="nav-item"><a class="nav-link" id="Courses-tab-Boot" data-toggle="tab" href="#Courses-edit">Edit</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section-body mt-4">
+                <div class="container-fluid">
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="Courses-all">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Institutes Information</h3>
+                                    <div class="card-options ">
+                                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+
+                                    </div>
+                                </div>
+                                <table id="institute_list" class="table table-responsive table-striped table-bordered  text-nowrap" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>ID</th>
+                                            <th>Name Of Institute</th>
+                                            <th>Alias</th>
+                                            <th>Affiliated To</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="Courses-add">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Add Institue Information</h3>
+                                    <div class="card-options ">
+                                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <form id="add_institute">
+                                        <div class="row clearfix">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="text" name="name" id="name" class="form-control" placeholder="Institute Name ">
+                                                </div>
+                                            </div>
+                                            <br/>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="text" name="alias" id="alias" class="form-control" placeholder="Institute Alias Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="text" name="affiliated_to" id="affiliated_to" class="form-control" placeholder="Affiliated To">
+                                                </div>
+                                            </div>
+                                            <br/>
+
+                                            <div class="col-sm-12">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                <button type="submit" class="btn btn-outline-secondary btn-default">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane" id="Courses-edit">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Edit Institutes</h3>
+                                    <div class="card-options ">
+                                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <form id="update_institute">
+                                        <div class="row clearfix">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input readonly type="text" class="form-control" name="edit_id" id="edit_id" placeholder="Institute ID" width="15">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="edit_name" id="edit_name" placeholder="Institute Name ">
+                                                </div>
+                                            </div>
+                                            <br/>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="edit_alias" id="edit_alias" placeholder="Institute Alias Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="text" name="edit_affiliated_to" id="edit_affiliated_to" class="form-control" placeholder="Affiliated To">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-sm-12">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                <button type="button" class="btn btn-outline-secondary btn-default">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Start Main project js, jQuery, Bootstrap -->
+    <script src="assets/bundles/lib.vendor.bundle.js"></script>
+
+    <!-- Start Plugin Js -->
+    <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/plugins/dropify/js/dropify.min.js"></script>
+    <script src="assets/bundles/summernote.bundle.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Start project main js  and page js -->
+    <script src="assets/js/core.js"></script>
+    <script src="assets/js/form/dropify.js"></script>
+    <script src="assets/js/page/summernote.js"></script>
+    <script src="assets/js/page/dialogs.js"></script>
+    <script src="assets/DataTables/datatables.js"></script>
+    <script src="header.js"></script>
+    <script>
+        $(document).ready(async() => {
+            await $.ajax(`${url}/master/getInstitute`, {
+                type: 'GET', // http method
+                success: async function(innerData, status, xhr) {
+                    $("#institute_list").find('tbody').empty()
+                    innerData.forEach(element => {
+                        let tr = `<tr>
+                                            <td>
+                                                <button type="button"  class="btn btn-icon btn-sm edit" title="Edit" id="${element.id}"><i class="fa fa-edit"></i></button>
+                                                <button type="button" class="btn btn-icon btn-sm delete" title="Delete" id="${element.id}"><i class="fa fa-trash-o text-danger"></i></button>
+                                            </td>
+                                            <td>${element.id}</td>
+                                            <td>${element.name}</td>
+                                            <td>${element.alias}</td>
+                                            <td>${element.affiliated_to}</td>
+                                            
+                                        </tr>`;
+                        $("#institute_list").find('tbody').append(tr);
+                    });
+                    $("#institute_list").dataTable();
+                },
+                error: function(jqXhr, textStatus, errorMessage) {
+                    console.log('locho', jqXhr.responseText)
+                }
+            });
+
+            $("#add_institute").submit(async(e) => {
+                e.preventDefault()
+                var formdata = $("#add_institute").serializeArray();
+                var data = {};
+                formdata.forEach(element => {
+                    data[element.name] = element.value;
+                });
+                await $.ajax(`${url}/master/addInstitute`, {
+                    "dataType": "json",
+                    type: 'POST',
+                    data: data,
+                    success: async function(data, status, xhr) {
+                        alert("New Record added succesfully ! !")
+                        window.location.href = $(location).attr('href')
+                    },
+                    error: function(jqxhr, textStatus, errorMessage) {
+                        console.log((errorMessage));
+                    }
+                })
+            })
+            $("#update_institute").submit(async(e) => {
+                e.preventDefault()
+                let id = $("#edit_id").val()
+                let data = {
+                    name: $("#edit_name").val(),
+                    alias: $("#edit_alias").val(),
+                    affiliated_to: $("#edit_affiliated_to").val()
+                }
+                console.log(data);
+                await $.ajax(`${url}/master/updateInstitute/${id}`, {
+                    "dataType": "json",
+                    type: 'PATCH',
+                    data: data,
+                    success: async function(data, status, xhr) {
+                        alert("Record updated succesfully ! !")
+                        window.location.href = $(location).attr('href')
+                    },
+                    error: function(jqxhr, textStatus, errorMessage) {
+                        console.log((errorMessage));
+                    }
+                })
+            })
+            $(document).on('click', '.delete', async function() {
+                let id = $(this).attr("id")
+                console.log("delete", id);
+                var userChoice = confirm("Do you want to Delete it ?");
+                console.log(userChoice)
+                if (userChoice == true) {
+                    await $.ajax(`${url}/master/delInstitute/${id}`, {
+                        type: 'DELETE',
+                        success: async function(data, status, xhr) {
+                            alert("Record Deleted Successfully ! !")
+                            window.location.href = $(location).attr('href')
+                        },
+                        error: function(jqxhr, textStatus, errorMessage) {
+                            console.log((errorMessage));
+                        }
+                    })
+                    return true;
+                } else {
+                    return false;
+                }
+
+
+            })
+            $(document).on('click', '.edit', async function() {
+                let id = $(this).attr("id")
+                console.log("edit", id);
+                await $.ajax(`${url}/master/getInstitute/${id}`, {
+                    type: 'GET',
+                    success: async function(data, status, xhr) {
+                        $("#edit_id").val(data[0].id)
+                        $("#edit_name").val(data[0].name)
+                        $("#edit_alias").val(data[0].alias)
+                        $("#edit_affiliated_to").val(data[0].affiliated_to)
+                        $("#Courses-all").removeClass("active")
+                        $("#Courses-edit").addClass("active")
+                    },
+                    error: function(jqxhr, textStatus, errorMessage) {
+                        console.log((errorMessage));
+                    }
+                })
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

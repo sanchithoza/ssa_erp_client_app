@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head id="headSection">
+
+</head>
+
+<body class="font-muli theme-cyan gradient">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+        </div>
+    </div>
+
+    <div id="main_content">
+        <!-- Start Main top header -->
+        <div id="header_top" class="header_top">
+            <div class="container">
+
+                <div class="hleft">
+                    <a class="header-brand" href="index.html"><i class="fa fa-graduation-cap brand-logo"></i></a>
+                    <div class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
+                    </div>
+                </div>
+                <div class="hright">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Main leftbar navigation -->
+        <div id="left-sidebar" class="sidebar">
+
+        </div>
+        <!-- Start project content area -->
+        <div class="page">
+            <!-- Start Page header -->
+            <div class="section-body" id="page_top">
+
+            </div>
+            <!-- Start Page title and tab -->
+            <div class="section-body">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between align-items-center ">
+                        <div class="header-action">
+                            <h1 class="page-title">Students</h1>
+                            <ol class="breadcrumb page-breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">SSAGRAWAL</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Apply for Course</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="section-body mt-4">
+                <div class="container-fluid">
+                    <form id="add_qualification">
+                        <div class="tab-pane" id="Student-add">
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h3 class="card-title">Apply for New Course</h3>
+                                            <div class="card-options ">
+                                                <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                                <!--<a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>-->
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <label class="col-md-3 col-form-label">Select Course <span class="text-danger">*</span></label>
+                                                <div class="col-md-9">
+                                                    <select class="form-control input-height" name="course_id" id="course_id" required>
+                                                    <option value="">Select...</option>
+                                                    <option value="BE">BE - Bachelor of Engineering</option>
+                                                    <option value="BCA">BCA - Bachelor of Computer Application</option>
+													<option value="BBA">BBA - Bachelor of Business Administration</option>
+													<option value="MCA">MCA - Master of Computer Applications</option>
+													<option value="MBA">MBA - Master of Business Administration</option>
+                                                </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="qualification_for_ug">
+                                <div class="row clearfix">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h3 class="card-title">HSC and SSC Qualification Details</h3>
+                                                <div class="card-options ">
+                                                    <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <table class="table" id="tab_qualification_for_ug" width="100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Qualification name</th>
+                                                            <th>Exam Body</th>
+                                                            <th>Year of Passing</th>
+                                                            <th>School Name</th>
+                                                            <th>Seat No.</th>
+                                                            <th>Marks Obtained</th>
+                                                            <th>Total Marks</th>
+                                                            <th>Percentage</th>
+                                                            <td></td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span>S.S.C./10th</span></td>
+                                                            <td><input name="ssc_exam_body" id="ssc_exam_body" type="text" width="15px" class="form-control"></td>
+                                                            <td><input name="ssc_year_of_passing" id="ssc_year_of_passing" type="text" width="15px" class="form-control"></td>
+                                                            <td><input name="ssc_school_name" id="ssc_school_name" type="text" width="15px" class="form-control"></td>
+                                                            <td><input name="ssc_seat_no" id="ssc_seat_no" type="text" width="15px" class="form-control"></td>
+                                                            <td><input name="ssc_obtained_marks" id="ssc_obtained_marks" type="text" width="15px" class="form-control"></td>
+                                                            <td><input name="ssc_total_marks" id="ssc_total_marks" type="text" width="15px" class="form-control"></td>
+                                                            <td><input name="ssc_percentage" id="ssc_percentage" type="text" width="15px" class="form-control"></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><span>H.S.C./12th</span></td>
+                                                            <td><input name="hsc_exam_body" id="hsc_exam_body" type="text" width="15px" class="form-control"></td>
+                                                            <td><input name="hsc_year_of_passing" id="hsc_year_of_passing" type="text" width="15px" class="form-control"></td>
+                                                            <td><input name="hsc_school_name" id="hsc_school_name" type="text" width="15px" class="form-control"></td>
+                                                            <td><input name="hsc_seat_no" id="hsc_seat_no" type="text" width="15px" class="form-control"></td>
+                                                            <td><input name="hsc_obtained_marks" id="hsc_obtained_marks" type="text" width="15px" class="form-control"></td>
+                                                            <td><input name="hsc_total_marks" id="hsc_total_marks" type="text" width="15px" class="form-control"></td>
+                                                            <td><input name="hsc_percentage" id="hsc_percentage" type="text" width="15px" class="form-control"></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="qualification_for_engineering">
+                                <div class="row clearfix">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h3 class="card-title">12th Science Subject Details</h3>
+                                                <div class="card-options ">
+                                                    <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <h5>Physics</h5>
+                                                        <hr> THEORY
+                                                        <input name="physics_th" id="physics_th" type="text" width="15px" class="form-control"> PRACTICAL
+                                                        <input name="physics_p" id="physics_p" type="text" width="15px" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <h5>Chemistry</h5>
+                                                        <hr> THEORY<input name="chemistry_th" id="chemistry_th" type="text" width="15px" class="form-control">PRACTICAL
+                                                        <input name="chemistry_p" id="chemistry_p" type="text" width="15px" class="form-control">
+
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <h5>Maths</h5>
+                                                        <hr>THEORY<input name="maths_th" id="maths_th" type="text" width="15px" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <h5>Computer</h5>
+                                                        <hr> THEORY<input name="computer_th" id="computer_th" type="text" width="15px" class="form-control">PRACTICAL
+                                                        <input name="computer_p" id="computer_p" type="text" width="15px" class="form-control">
+                                                    </div>
+
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+
+                                                    <div class="col-md-3">
+                                                        <h5>GUJCET</h5>
+                                                        <hr>
+
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        Gujcet ID<input name="gujcet_id" id="gujcet_id" type="text" width="15px" class="form-control"> Gujcet Marks<input name="gujcet_marks" id="gujcet_marks" type="text" width="15px" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <h5>ACPC</h5>
+                                                        <hr>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        ACPC Merit No.<input name="acpc_merit_no" id="acpc_merit_no" type="text" width="15px" class="form-control">ACPC Merit Marks<input name="acpc_merit_marks" id="acpc_merit_marks" type="text" width="15px"
+                                                            class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="qualification_for_pg">
+                                <div class="row clearfix">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Under Graduation (Bechlore Degree) Details</h3>
+                                                <div class="card-options ">
+                                                    <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td>Name of Qualification</td>
+                                                        <td>Medium</td>
+                                                        <td>Year of Passing</td>
+                                                        <td>Name of University</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input name="ug_name" id="ug_name" type="text" width="15px" class="form-control"></td>
+                                                        <td><input name="ug_medium" id="ug_medium" type="text" width="15px" class="form-control"></td>
+                                                        <td><input name="ug_year_of_passing" id="ug_year_of_passing" type="text" width="15px" class="form-control"></td>
+                                                        <td><input name="ug_university" id="ug_university" type="text" width="15px" class="form-control"></td>
+                                                    </tr>
+                                                </table>
+                                                <br/>
+                                                <table class="table">
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>Sem-1</td>
+                                                        <td>Sem-2</td>
+                                                        <td>Sem-3</td>
+                                                        <td>Sem-4</td>
+                                                        <td>Sem-5</td>
+                                                        <td>Sem-6</td>
+                                                        <td>Sem-7</td>
+                                                        <td>Sem-8</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Obtain Marks</td>
+                                                        <td><input name="sem_1_obtain_marks" id="sem_1_obtain_marks" type="text" width="10px" class="form-control"></td>
+                                                        <td><input name="sem_2_obtain_marks" id="sem_2_obtain_marks" type="text" width="10px" class="form-control"></td>
+                                                        <td><input name="sem_3_obtain_marks" id="sem_3_obtain_marks" type="text" width="10px" class="form-control"></td>
+                                                        <td><input name="sem_4_obtain_marks" id="sem_4_obtain_marks" type="text" width="10px" class="form-control"></td>
+                                                        <td><input name="sem_5_obtain_marks" id="sem_5_obtain_marks" type="text" width="10px" class="form-control"></td>
+                                                        <td><input name="sem_6_obtain_marks" id="sem_6_obtain_marks" type="text" width="10px" class="form-control"></td>
+                                                        <td><input name="sem_7_obtain_marks" id="sem_7_obtain_marks" type="text" width="10px" class="form-control"></td>
+                                                        <td><input name="sem_8_obtain_marks" id="sem_8_obtain_marks" type="text" width="10px" class="form-control"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Total Marks</td>
+                                                        <td><input name="sem_1_out_of" id="sem_1_out_of" type="text" width="10px" class="form-control"></td>
+                                                        <td><input name="sem_2_out_of" id="sem_2_out_of" type="text" width="10px" class="form-control"></td>
+                                                        <td><input name="sem_3_out_of" id="sem_3_out_of" type="text" width="10px" class="form-control"></td>
+                                                        <td><input name="sem_4_out_of" id="sem_4_out_of" type="text" width="10px" class="form-control"></td>
+                                                        <td><input name="sem_5_out_of" id="sem_5_out_of" type="text" width="10px" class="form-control"></td>
+                                                        <td><input name="sem_6_out_of" id="sem_6_out_of" type="text" width="10px" class="form-control"></td>
+                                                        <td><input name="sem_7_out_of" id="sem_7_out_of" type="text" width="10px" class="form-control"></td>
+                                                        <td><input name="sem_8_out_of" id="sem_8_out_of" type="text" width="10px" class="form-control"></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" id="btn_add_details" class="btn btn-primary" value="Submit Details">
+
+                            <br/><br/>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Start Main project js, jQuery, Bootstrap -->
+        <script src="assets/bundles/lib.vendor.bundle.js"></script>
+
+        <!-- Start Plugin Js -->
+        <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+        <script src="assets/plugins/dropify/js/dropify.min.js"></script>
+        <script src="assets/bundles/summernote.bundle.js"></script>
+        <script src="assets/plugins/sweetalert/sweetalert.min.js"></script>
+
+        <!-- Start project main js  and page js -->
+        <script src="assets/js/core.js"></script>
+        <script src="assets/js/form/dropify.js"></script>
+        <script src="assets/js/page/summernote.js"></script>
+        <script src="assets/js/page/dialogs.js"></script>
+        <script src="header.js"></script>
+        <script>
+            $(document).ready(async() => {
+                $("#qualification_for_ug").hide()
+                $("#qualification_for_engineering").hide()
+                $("#qualification_for_pg").hide()
+                $("#btn_add_details").hide()
+                let url = "http://localhost:3000"
+                if (!sessionStorage.length > 0) {
+                    await sessionStorage.clear()
+                    window.location.href = "../login.html"
+                }
+
+                let userData = JSON.parse(sessionStorage.getItem('user'))
+                let course_array = []
+                $('#user_name').html(userData.name)
+                await $.ajax(`${url}/master/getCourse`, {
+                    type: 'GET',
+                    success: async function(innerData, status, xhr) {
+                        innerData.forEach(async(element) => {
+                            await course_array.push({
+                                "name": element.name,
+                                "alias": element.alias,
+                                "id": element.id,
+                                "code": element.course_code
+                            })
+                        });
+                    },
+                    error: async function(jqXhr, textStatus, errorMessage) {
+                        console.log('master/getInstitute', jqXhr.responseText)
+                    }
+                })
+                $("#course_id").html("")
+                $("#course_id").append(`<option value="0">-----------</option>`)
+                course_array.forEach(async(element) => {
+                    await $("#course_id").append(`<option title="${element.code}" value="${element.id}">${element.name}  - <b>${element.alias}</b></option>`)
+                });
+                await $.ajax(`${url}/student/getAdmissionForm/${userData.id}`, {
+                    type: 'GET',
+                    success: async function(data, status, xhr) {
+                        console.log(data, status, xhr)
+                        $('#course_id').val(data[0].course_id)
+                        let course_code = $("#course_id").find('option:selected').attr("title")
+
+                        const split_course_code = course_code.split("-");
+                        let course_type = split_course_code[0];
+                        // console.log(course_temp);
+                        if (course_type == "UG") {
+                            $("#qualification_for_ug").show();
+                            await $.ajax(`${url}/student/getQualification/${userData.id}`, {
+                                type: 'GET',
+                                success: async function(data, status, xhr) {
+                                    console.log(data, status, xhr)
+
+                                },
+                                error: function(jqXhr, textStatus, errorMessage) {
+                                    console.log('locho', jqXhr.responseText)
+                                }
+                            });
+                        }
+                        if (course_type == "BE") {
+                            $("#qualification_for_ug").show();
+                            $("#qualification_for_engineering").show();
+                        }
+                        if (course_type == "PG") {
+                            await $.ajax(`${url}/student/getQualificationForUg/${userData.id}`, {
+                                type: 'GET',
+                                success: async function(data, status, xhr) {
+                                    console.log(data, status, xhr)
+
+                                },
+                                error: function(jqXhr, textStatus, errorMessage) {
+                                    console.log('locho', jqXhr.responseText)
+                                }
+                            });
+                        }
+                    },
+                    error: function(jqXhr, textStatus, errorMessage) {
+                        console.log('locho', jqXhr.responseText)
+                    }
+                });
+
+
+
+
+                $("#course_id").change(() => {
+                    $("#qualification_for_ug").hide()
+                    $("#qualification_for_engineering").hide()
+                    $("#qualification_for_pg").hide()
+                    $("#btn_add_details").show()
+                    let course_code = $("#course_id").find('option:selected').attr("title")
+
+                    const split_course_code = course_code.split("-");
+                    let course_type = split_course_code[0];
+                    if (course_type == "UG") {
+                        $("#qualification_for_ug").show();
+                    }
+                    if (course_type == "BE") {
+                        $("#qualification_for_ug").show();
+                        $("#qualification_for_engineering").show();
+                    }
+                    if (course_type == "PG") {
+
+                        $("#qualification_for_pg").show();
+                    }
+
+                })
+
+                $("#btn_add_details").click(async(e) => {
+                    e.preventDefault()
+                    var formdata = $("#add_qualification").serializeArray();
+                    var data = {};
+                    formdata.forEach(element => {
+                        data[element.name] = element.value;
+                    });
+                    data["course_id"] = $("#course_id").val()
+                    await $.ajax(`${url}/student/addAdmissionForm`, {
+                        "dataType": "json",
+                        type: 'POST',
+                        data: {
+                            "student_id": userData.id,
+                            "course_id": data.course_id,
+                            "admission_year": new Date().getFullYear()
+                        },
+                        success: async function(data, status, xhr) {
+                            console.log(data, status, xhr);
+                        },
+                        error: function(jqxhr, textStatus, errorMessage) {
+                            console.log((errorMessage));
+                        }
+                    })
+                    if ($("#qualification_for_ug").is(":visible")) {
+                        let for_ug = [{
+                            "student_id": userData.id,
+                            "qualification_name": "SSC",
+                            "exam_body": data.ssc_exam_body,
+                            "year_of_passing": data.ssc_year_of_passing,
+                            "school_name": data.ssc_school_name,
+                            "seat_no": data.ssc_seat_no,
+                            "obtained_marks": data.ssc_obtained_marks,
+                            "total_marks": data.ssc_total_marks,
+                            "percentage": data.ssc_percentage
+                        }, {
+                            "student_id": userData.id,
+                            "qualification_name": "HSC",
+                            "exam_body": data.hsc_exam_body,
+                            "year_of_passing": data.hsc_year_of_passing,
+                            "school_name": data.hsc_school_name,
+                            "seat_no": data.hsc_seat_no,
+                            "obtained_marks": data.hsc_obtained_marks,
+                            "total_marks": data.hsc_total_marks,
+                            "percentage": data.hsc_percentage
+                        }]
+                        for_ug.forEach(async(element) => {
+                            await $.ajax(`${url}/student/addQualification`, {
+                                "dataType": "json",
+                                type: 'POST',
+                                data: element,
+                                success: async function(data, status, xhr) {
+                                    console.log(data, status, xhr);
+                                    if (for_ug[for_ug.length - 1] === element) {
+                                        alert("Qualifications Added Successfully ! !")
+                                    }
+                                },
+                                error: function(jqxhr, textStatus, errorMessage) {
+                                    console.log((errorMessage));
+                                }
+                            })
+                        });
+                    }
+                    if ($("#qualification_for_engineering").is(":visible")) {
+                        let for_engineering = {
+                            "student_id": userData.id,
+                            "physics_th": data.physics_th,
+                            "physics_p": data.physics_p,
+                            "chemistry_th": data.chemistry_th,
+                            "chemistry_p": data.chemistry_p,
+                            "maths_th": data.maths_th,
+                            "computer_th": data.computer_th,
+                            "computer_p": data.computer_p,
+                            "gujcet_id": data.gujcet_id,
+                            "gujcet_marks": data.gujcet_marks,
+                            "acpc_merit_no": data.acpc_merit_no,
+                            "acpc_merit_marks": data.acpc_merit_marks
+                        }
+                        await $.ajax(`${url}/student/addQualificationForEngineering`, {
+                            "dataType": "json",
+                            type: 'POST',
+                            data: for_engineering,
+                            success: async function(data, status, xhr) {
+                                console.log(data, status, xhr);
+                            },
+                            error: function(jqxhr, textStatus, errorMessage) {
+                                console.log((errorMessage));
+                            }
+                        })
+                    }
+                    if ($("#qualification_for_pg").is(":visible")) {
+                        let for_pg = {
+                            "student_id": 1,
+                            "name": data.ug_name,
+                            "medium": data.ug_medium,
+                            "year_of_passing": data.ug_year_of_passing,
+                            "university": data.ug_university,
+                            "sem_1_obtain_marks": data.sem_1_obtain_marks,
+                            "sem_1_out_of": data.sem_1_out_of,
+                            "sem_2_obtain_marks": data.sem_2_obtain_marks,
+                            "sem_2_out_of": data.sem_2_out_of,
+                            "sem_3_obtain_marks": data.sem_3_obtain_marks,
+                            "sem_3_out_of": data.sem_3_out_of,
+                            "sem_4_obtain_marks": data.sem_4_obtain_marks,
+                            "sem_4_out_of": data.sem_4_out_of,
+                            "sem_5_obtain_marks": data.sem_5_obtain_marks,
+                            "sem_5_out_of": data.sem_5_out_of,
+                            "sem_6_obtain_marks": data.sem_6_obtain_marks,
+                            "sem_6_out_of": data.sem_6_out_of,
+                            "sem_7_obtain_marks": data.sem_7_obtain_marks,
+                            "sem_7_out_of": data.sem_7_out_of,
+                            "sem_8_obtain_marks": data.sem_8_obtain_marks,
+                            "sem_8_out_of": data.sem_8_out_of
+                        }
+                        await $.ajax(`${url}/student/addQualificationForUg`, {
+                            "dataType": "json",
+                            type: 'POST',
+                            data: for_pg,
+                            success: async function(data, status, xhr) {
+                                console.log(data, status, xhr);
+                            },
+                            error: function(jqxhr, textStatus, errorMessage) {
+                                console.log((errorMessage));
+                            }
+                        })
+                    }
+
+                })
+            })
+        </script>
+</body>
+
+</html>
