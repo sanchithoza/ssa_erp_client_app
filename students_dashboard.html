@@ -169,6 +169,8 @@
                 success: async function(data, status, xhr) {
                     if (Array.isArray(data)) {
                         let jsonObject = data[0]
+                        console.log(jsonObject);
+                        sessionStorage.setItem("student_id", data[0].id)
                         console.log("profile already completed");
                     } else {
                         console.log("profile still incomplete");
