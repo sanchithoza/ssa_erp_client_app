@@ -25,16 +25,15 @@ $("#left-sidebar").html(`<h5 class="brand-name">S S Agrawal </br>ERP System<a hr
     <div class="tab-pane fade show active" id="menu-uni" role="tabpanel">
         <nav class="sidebar-nav">
             <ul class="metismenu">
-                <li><a href="home.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+                <li><a href="students_dashboard.html"><i class="fa fa-dashboard"></i><span>Student Dashboard</span></a></li>
                 <li><a href="students_view.html"><i class="fa fa-users"></i><span>Students</span></a></li>
                 <li><a href="institutes.html"><i class="fa fa-graduation-cap"></i><span>Institutes</span></a></li>
                 <li><a href="courses.html"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>
                 <li><a href="class.html"><i class="fa fa-graduation-cap"></i><span>Class</span></a></li>
-                <li><a href=""><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
-                <li><a href=""><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
-                <li><a href=""><i class="fa fa-users"></i><span>Departments</span></a></li>
-                <li><a href=""><i class="fa fa-book"></i><span>Library</span></a></li>
-                <li><a href=""><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
+                <li><a href="admin_dashboard.html"><i class="fa fa-dashboard"></i><span>Admin Dashboard</span></a></li>
+                <li><a href="admin_pending_applications.html"><i class="fa fa-dashboard"></i><span>Pending Applications</span></a></li>
+                <li><a href="admin_selected_applications.html"><i class="fa fa-dashboard"></i><span>Selected Applications</span></a></li>
+                <li><a href="admin_rejected_applications.html"><i class="fa fa-dashboard"></i><span>Rejected Applications</span></a></li>
             </ul>
         </nav>
     </div>
@@ -71,3 +70,15 @@ $("#log_out").click(async(e) => {
     await sessionStorage.clear()
     window.location.href = "login.html"
 })
+
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+}

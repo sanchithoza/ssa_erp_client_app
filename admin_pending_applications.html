@@ -199,7 +199,7 @@
                     await data.forEach(async(element) => {
                         let tr = `<tr>
                                             <td>
-                                                <a href="admin_students_info.html"><button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button></a>
+                                                <a href="admin_students_info.html?reg_id=${element.student_registration_id}&course_id=${element.course_id}"><button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button></a>
                                             </td>
                                             <td>${element.student_id}</td>
                                             <td>${element.name}</td>

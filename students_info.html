@@ -311,10 +311,7 @@
                                     $(`#${inputControlId}`).val(jsonObject[key])
                                 }
                             })
-                            let date = new Date(jsonObject.date_of_birth).toLocaleDateString()
-                            var datearray = date.split("/");
-                            var newdate = datearray[2] + '-' + datearray[0] + '-' + datearray[1];
-                            $('#date_of_birth').val(newdate);
+                            $('#date_of_birth').val(formatDate(jsonObject.date_of_birth))
                             $('#gender').val(jsonObject.gender)
                             $('#category').val(jsonObject.category)
                             $('#marital_status').val(jsonObject.marital_status)

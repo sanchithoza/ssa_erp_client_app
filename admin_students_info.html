@@ -80,6 +80,12 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
+                                            <label class="col-md-3 col-form-label">Student ID<span class="text-danger"></span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="student_id" id="student_id" class="form-control" placeholder="112233" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
                                             <label class="col-md-3 col-form-label">First Name<span class="text-danger"></span></label>
                                             <div class="col-md-9">
                                                 <input type="text" id="first_name" name="first_name" class="form-control" aria-describedby="emailHelp" placeholder="First Name" required>
@@ -226,190 +232,234 @@
 
                                         <div class="form-group row">
                                             <label class="col-md-3 col-form-label"> Photo</label>
-                                           
+
                                         </div>
 
-                                        
+
                                     </form>
                                 </div>
-                                <div class="tab-pane" id="hideDiv">
-                                    <div class="row clearfix">
-                                        <div class="col-lg-12 col-md-12 col-sm-12">
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    <h3 class="card-title">HSC and SSC Qualification Details</h3>
-                                                    <div class="card-options ">
-                                                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                <form id="add_qualification">
+                                    <div class="tab-pane" id="Student-add">
+                                        <div class="row clearfix">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h3 class="card-title">Apply for New Course</h3>
+                                                        <div class="card-options ">
+                                                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                                            <!--<a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>-->
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="form-group row">
+                                                            <label class="col-md-3 col-form-label">Select Course <span class="text-danger">*</span></label>
+                                                            <div class="col-md-9">
+                                                                <select class="form-control input-height" name="course_id" id="course_id" required>
+                                                                <option value="">Select...</option>
+                                                                <option value="BE">BE - Bachelor of Engineering</option>
+                                                                <option value="BCA">BCA - Bachelor of Computer Application</option>
+                                                                <option value="BBA">BBA - Bachelor of Business Administration</option>
+                                                                <option value="MCA">MCA - Master of Computer Applications</option>
+                                                                <option value="MBA">MBA - Master of Business Administration</option>
+                                                            </select>
+                                                            </div>
+
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <form class="card-body" id="form_register" action="students_information.html" method="">
-                                                <table width="100%" border="0">
-                                                            <tr>
-                                                                <td>Qualification name</td>
-                                                                <td>Exam Body</td>
-                                                                <td>Year of Passing</td>
-                                                                <td>School Name</td>
-                                                                <td>Seat No.</td>
-                                                                <td>Marks Obtained</td>
-                                                                <td>Total Marks</td>
-                                                                <td>Percentage</td>
-                                                                <td></td>
-                                                            </tr>
-                                                        <tr>
-                                                        <td><input name="qualification_name" id="qualification_name" type="text" width="15px" class="form-control" placeholder="SSC"></td>
-                                                        <td><input name="exam_body" id="exam_body" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="year_of_passing" id="year_of_passing" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="school_name" id="school_name" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="seat_no" id="seat_no" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="obtained_marks" id="obtained_marks" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="total_marks" id="total_marks" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="percentage" id="percentage" type="text" width="15px" class="form-control"></td>
-                                                        <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                        <td><input name="qualification_name" id="qualification_name" type="text" width="15px" class="form-control" placeholder="HSC"></td>
-                                                        <td><input name="exam_body" id="exam_body"  type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="year_of_passing" id="year_of_passing" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="school_name" id="school_name" type="text" width="15px" class="form-control"></td>
-                                                        <td><input  name="seat_no" id="seat_no" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="obtained_marks" id="obtained_marks" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="total_marks" id="total_marks" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="percentage" id="percentage" type="text" width="15px" class="form-control"></td>
-                                                        <td></td>
-                                                        </tr>
-                                                        </table>
-                                                </form>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane" id="hideDiv2">
-                                    <div class="row clearfix">
-                                        <div class="col-lg-12 col-md-12 col-sm-12">
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    <h3 class="card-title">12th Science Subject Details</h3>
-                                                    <div class="card-options ">
-                                                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-                                                        
+                                        <div class="tab-pane" id="qualification_for_ug">
+                                            <div class="row clearfix">
+                                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">HSC and SSC Qualification Details</h3>
+                                                            <div class="card-options ">
+                                                                <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <table class="table" id="tab_qualification_for_ug" width="100%">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Qualification name</th>
+                                                                        <th>Exam Body</th>
+                                                                        <th>Year of Passing</th>
+                                                                        <th>School Name</th>
+                                                                        <th>Seat No.</th>
+                                                                        <th>Marks Obtained</th>
+                                                                        <th>Total Marks</th>
+                                                                        <th>Percentage</th>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td><span>S.S.C./10th</span></td>
+                                                                        <td><input name="ssc_exam_body" id="ssc_exam_body" type="text" width="15px" class="form-control"></td>
+                                                                        <td><input name="ssc_year_of_passing" id="ssc_year_of_passing" type="text" width="15px" class="form-control"></td>
+                                                                        <td><input name="ssc_school_name" id="ssc_school_name" type="text" width="15px" class="form-control"></td>
+                                                                        <td><input name="ssc_seat_no" id="ssc_seat_no" type="text" width="15px" class="form-control"></td>
+                                                                        <td><input name="ssc_obtained_marks" id="ssc_obtained_marks" type="text" width="15px" class="form-control"></td>
+                                                                        <td><input name="ssc_total_marks" id="ssc_total_marks" type="text" width="15px" class="form-control"></td>
+                                                                        <td><input name="ssc_percentage" id="ssc_percentage" type="text" width="15px" class="form-control"></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><span>H.S.C./12th</span></td>
+                                                                        <td><input name="hsc_exam_body" id="hsc_exam_body" type="text" width="15px" class="form-control"></td>
+                                                                        <td><input name="hsc_year_of_passing" id="hsc_year_of_passing" type="text" width="15px" class="form-control"></td>
+                                                                        <td><input name="hsc_school_name" id="hsc_school_name" type="text" width="15px" class="form-control"></td>
+                                                                        <td><input name="hsc_seat_no" id="hsc_seat_no" type="text" width="15px" class="form-control"></td>
+                                                                        <td><input name="hsc_obtained_marks" id="hsc_obtained_marks" type="text" width="15px" class="form-control"></td>
+                                                                        <td><input name="hsc_total_marks" id="hsc_total_marks" type="text" width="15px" class="form-control"></td>
+                                                                        <td><input name="hsc_percentage" id="hsc_percentage" type="text" width="15px" class="form-control"></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <form class="card-body" id="form_register" action="students_information.html" method="">
-                                                   <table  border="0">
-                                                            <tr>
-                                                                <td>Physics (TH)</td>
-                                                                <td>Physics (PR)</td>
-                                                                <td>Chemistry (TH)</td>
-                                                                <td>Chemistry (PR)</td>
-                                                                <td>Maths</td>
-                                                                <td>Computer (TH)</td>
-                                                                <td>Computer (PR)</td>
-                                                            </tr>
-                                                        <tr>
-                                                        <td><input name="physics_th" id="physics_th" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="physics_p" id="physics_p" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="chemistry_th" id="chemistry_th" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="chemistry_p" id="chemistry_p" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="maths_th" id="maths_th" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="computer_th" id="computer_th" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="computer_p" id="computer_p" type="text" width="15px" class="form-control"></td>
-                                                        </tr>
-                                                        <tr><br/>
-                                                        </tr>
-                                                        <tr>
-                                                                <td>Gujcet ID</td>
-                                                                <td>Gujcet Marks</td>
-                                                                <td>ACPC Merit No.</td>
-                                                                <td>ACPC Merit Marks</td>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td></td>
-                                                            </tr>
-                                                        <tr>
-                                                        <td><input name="gujcet_id" id="gujcet_id" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="gujcet_marks" id="gujcet_marks" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="acpc_merit_no" id="acpc_merit_no" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="acpc_merit_marks" id="acpc_merit_marks" type="text" width="15px" class="form-control"></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        </tr>
-                                                        </table>
-                                                </form>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane" id="hideDiv3">
-                                    <div class="row clearfix">
-                                        <div class="col-lg-12 col-md-12 col-sm-12">
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    <h3 class="card-title">UG Details</h3>
-                                                    <div class="card-options ">
-                                                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-                                                        
+
+                                        <div class="tab-pane" id="qualification_for_engineering">
+                                            <div class="row clearfix">
+                                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">12th Science Subject Details</h3>
+                                                            <div class="card-options ">
+                                                                <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <h5>Physics</h5>
+                                                                    <hr> THEORY
+                                                                    <input name="physics_th" id="physics_th" type="text" width="15px" class="form-control"> PRACTICAL
+                                                                    <input name="physics_p" id="physics_p" type="text" width="15px" class="form-control">
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <h5>Chemistry</h5>
+                                                                    <hr> THEORY<input name="chemistry_th" id="chemistry_th" type="text" width="15px" class="form-control">PRACTICAL
+                                                                    <input name="chemistry_p" id="chemistry_p" type="text" width="15px" class="form-control">
+
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <h5>Maths</h5>
+                                                                    <hr>THEORY<input name="maths_th" id="maths_th" type="text" width="15px" class="form-control">
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <h5>Computer</h5>
+                                                                    <hr> THEORY<input name="computer_th" id="computer_th" type="text" width="15px" class="form-control">PRACTICAL
+                                                                    <input name="computer_p" id="computer_p" type="text" width="15px" class="form-control">
+                                                                </div>
+
+                                                            </div>
+                                                            <hr>
+                                                            <div class="row">
+
+                                                                <div class="col-md-3">
+                                                                    <h5>GUJCET</h5>
+                                                                    <hr>
+
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    Gujcet ID<input name="gujcet_id" id="gujcet_id" type="text" width="15px" class="form-control"> Gujcet Marks<input name="gujcet_marks" id="gujcet_marks" type="text" width="15px" class="form-control">
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <h5>ACPC</h5>
+                                                                    <hr>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    ACPC Merit No.<input name="acpc_merit_no" id="acpc_merit_no" type="text" width="15px" class="form-control">ACPC Merit Marks<input name="acpc_merit_marks" id="acpc_merit_marks" type="text"
+                                                                        width="15px" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <form class="card-body" id="form_register" action="students_information.html" method="">
-                                                    <table>
-                                                        <tr>
-                                                        <td>Name of Qualification</td>
-                                                        <td>Medium</td>
-                                                        <td>Year of Passing</td>
-                                                        <td>Name of University</td>
-                                                        </tr>
-                                                        <tr>
-                                                        <td><input name="name" id="name" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="medium" id="medium" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="year_of_passing" id="year_of_passing" type="text" width="15px" class="form-control"></td>
-                                                        <td><input name="university" id="university" type="text" width="15px" class="form-control"></td>
-                                                        </tr>
-                                                    </table>
-                                                    <br/>
-                                                    <table  border="0">
-                                                            <tr>
-                                                                <td></td>
-                                                                <td>Sem-1</td>
-                                                                <td>Sem-2</td>
-                                                                <td>Sem-3</td>
-                                                                <td>Sem-4</td>
-                                                                <td>Sem-5</td>
-                                                                <td>Sem-6</td>
-                                                                <td>Sem-7</td>
-                                                                <td>Sem-8</td>													
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Obtain Marks</td>
-                                                                <td><input name="sem_1_obtain_marks" id="sem_1_obtain_marks" type="text" width="10px" class="form-control"></td>
-                                                                <td><input name="sem_2_obtain_marks" id="sem_2_obtain_marks" type="text" width="10px" class="form-control"></td>
-                                                                <td><input name="sem_3_obtain_marks" id="sem_3_obtain_marks" type="text" width="10px" class="form-control"></td>
-                                                                <td><input name="sem_4_obtain_marks" id="sem_4_obtain_marks" type="text" width="10px" class="form-control"></td>
-                                                                <td><input name="sem_5_obtain_marks" id="sem_5_obtain_marks" type="text" width="10px" class="form-control"></td>
-                                                                <td><input name="sem_6_obtain_marks" id="sem_6_obtain_marks" type="text" width="10px" class="form-control"></td>
-                                                                <td><input name="sem_7_obtain_marks" id="sem_7_obtain_marks" type="text" width="10px" class="form-control"></td>
-                                                                <td><input name="sem_8_obtain_marks" id="sem_8_obtain_marks" type="text" width="10px" class="form-control"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Total Marks</td>
-                                                                <td><input name="sem_1_out_of" id="sem_1_out_of" type="text" width="10px" class="form-control"></td>
-                                                                <td><input name="sem_2_out_of" id="sem_2_out_of" type="text" width="10px" class="form-control"></td>
-                                                                <td><input name="sem_3_out_of" id="sem_3_out_of" type="text" width="10px" class="form-control"></td>
-                                                                <td><input name="sem_4_out_of" id="sem_4_out_of" type="text" width="10px" class="form-control"></td>
-                                                                <td><input name="sem_5_out_of" id="sem_5_out_of" type="text" width="10px" class="form-control"></td>
-                                                                <td><input name="sem_6_out_of" id="sem_6_out_of" type="text" width="10px" class="form-control"></td>
-                                                                <td><input name="sem_7_out_of" id="sem_7_out_of" type="text" width="10px" class="form-control"></td>
-                                                                <td><input name="sem_8_out_of" id="sem_8_out_of" type="text" width="10px" class="form-control"></td>
-                                                            </tr>
-                                                    </table>
-                                                </form>
                                             </div>
                                         </div>
+                                        <div class="tab-pane" id="qualification_for_pg">
+                                            <div class="row clearfix">
+                                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">Under Graduation (Bechlore Degree) Details</h3>
+                                                            <div class="card-options ">
+                                                                <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <table class="table">
+                                                                <tr>
+                                                                    <td>Name of Qualification</td>
+                                                                    <td>Medium</td>
+                                                                    <td>Year of Passing</td>
+                                                                    <td>Name of University</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input name="ug_name" id="ug_name" type="text" width="15px" class="form-control"></td>
+                                                                    <td><input name="ug_medium" id="ug_medium" type="text" width="15px" class="form-control"></td>
+                                                                    <td><input name="ug_year_of_passing" id="ug_year_of_passing" type="text" width="15px" class="form-control"></td>
+                                                                    <td><input name="ug_university" id="ug_university" type="text" width="15px" class="form-control"></td>
+                                                                </tr>
+                                                            </table>
+                                                            <br/>
+                                                            <table class="table">
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td>Sem-1</td>
+                                                                    <td>Sem-2</td>
+                                                                    <td>Sem-3</td>
+                                                                    <td>Sem-4</td>
+                                                                    <td>Sem-5</td>
+                                                                    <td>Sem-6</td>
+                                                                    <td>Sem-7</td>
+                                                                    <td>Sem-8</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Obtain Marks</td>
+                                                                    <td><input name="sem_1_obtain_marks" id="sem_1_obtain_marks" type="text" width="10px" class="form-control"></td>
+                                                                    <td><input name="sem_2_obtain_marks" id="sem_2_obtain_marks" type="text" width="10px" class="form-control"></td>
+                                                                    <td><input name="sem_3_obtain_marks" id="sem_3_obtain_marks" type="text" width="10px" class="form-control"></td>
+                                                                    <td><input name="sem_4_obtain_marks" id="sem_4_obtain_marks" type="text" width="10px" class="form-control"></td>
+                                                                    <td><input name="sem_5_obtain_marks" id="sem_5_obtain_marks" type="text" width="10px" class="form-control"></td>
+                                                                    <td><input name="sem_6_obtain_marks" id="sem_6_obtain_marks" type="text" width="10px" class="form-control"></td>
+                                                                    <td><input name="sem_7_obtain_marks" id="sem_7_obtain_marks" type="text" width="10px" class="form-control"></td>
+                                                                    <td><input name="sem_8_obtain_marks" id="sem_8_obtain_marks" type="text" width="10px" class="form-control"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Total Marks</td>
+                                                                    <td><input name="sem_1_out_of" id="sem_1_out_of" type="text" width="10px" class="form-control"></td>
+                                                                    <td><input name="sem_2_out_of" id="sem_2_out_of" type="text" width="10px" class="form-control"></td>
+                                                                    <td><input name="sem_3_out_of" id="sem_3_out_of" type="text" width="10px" class="form-control"></td>
+                                                                    <td><input name="sem_4_out_of" id="sem_4_out_of" type="text" width="10px" class="form-control"></td>
+                                                                    <td><input name="sem_5_out_of" id="sem_5_out_of" type="text" width="10px" class="form-control"></td>
+                                                                    <td><input name="sem_6_out_of" id="sem_6_out_of" type="text" width="10px" class="form-control"></td>
+                                                                    <td><input name="sem_7_out_of" id="sem_7_out_of" type="text" width="10px" class="form-control"></td>
+                                                                    <td><input name="sem_8_out_of" id="sem_8_out_of" type="text" width="10px" class="form-control"></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br/><br/>
                                     </div>
-                                </div>
+                                </form>
                                 <div class="col-sm-12">
                                     <label class="col-md-3 col-form-label"> <b>Admission Remark</b> <span class="text-danger">*</span></label>
-                        
+
                                     <div class="form-group">
                                         <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
                                     </div>
@@ -417,14 +467,14 @@
                                 <div class="col-sm-12">
                                     <label class="col-md-3 col-form-label"> <b>Admission Status</b> <span class="text-danger">*</span></label>
                                     <div class="form-group">
-                                    <div class="col-md-9">
-                                        <select class="form-control input-height" name="admission_status" id="admission_status" required>
+                                        <div class="col-md-9">
+                                            <select class="form-control input-height" name="admission_status" id="admission_status" required>
                                             <option value="">Select...</option>
                                             <option value="married">Selected </option>
                                             <option value="unmarried">Rejected</option>
                                         </select>
+                                        </div>
                                     </div>
-                                </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <button type="submit" class="btn btn-primary">Update</button>
@@ -455,8 +505,12 @@
     <script src="assets/js/page/summernote.js"></script>
     <script src="assets/js/page/dialogs.js"></script>
     <script src="header.js"></script>
-   <!-- <script>
+    <script>
         $(document).ready(async() => {
+            $("#qualification_for_ug").hide()
+            $("#qualification_for_engineering").hide()
+            $("#qualification_for_pg").hide()
+
             let url = "http://localhost:3000"
             if (!sessionStorage.length > 0) {
                 await sessionStorage.clear()
@@ -466,10 +520,15 @@
             let userData = JSON.parse(sessionStorage.getItem('user'))
             console.log(userData.name);
             $('#user_name').html(userData.name)
+            $.urlParam = function(name) {
+                var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+                return results[1] || 0;
+            }
+            let student_registration_id = decodeURIComponent($.urlParam('reg_id'))
             await $.ajax(`${url}/student/getRegistration`, {
                 type: 'POST', // http method
                 data: {
-                    "email": userData.email
+                    "id": student_registration_id
                 },
                 success: async function(innerData, status, xhr) {
 
@@ -489,11 +548,12 @@
             await $.ajax(`${url}/student/getStudentInfo`, {
                 type: 'POST', // http method
                 data: {
-                    "student_registration_id": userData.id
+                    "student_registration_id": student_registration_id
                 },
                 success: async function(data, status, xhr) {
                     if (Array.isArray(data)) {
                         let jsonObject = data[0]
+
                         $('#form_student_info input[id]').map(function() {
                             let inputControlId = this.id
                             Object.keys(jsonObject).forEach(key => {
@@ -503,42 +563,158 @@
                                     }
                                 })
                                 //  $('#date_of_birth').val(jsonObject.date_of_birth.format("YYYY-MM-DD"));
-                            $('#gender').val(jsonObject.gender)
-                            $('#category').val(jsonObject.category)
-                            $('#marital_status').val(jsonObject.marital_status)
-
                         })
+                        $('#date_of_birth').val(formatDate(jsonObject.date_of_birth))
+                        $('#gender').val(jsonObject.gender)
+                        $('#student_id').val(jsonObject.id)
+                        $('#category').val(jsonObject.category)
+                        $('#marital_status').val(jsonObject.marital_status)
+
                     }
                     //  window.location.href = "student/std_info.html"
                 },
                 error: function(jqXhr, textStatus, errorMessage) {
                     console.log('locho', jqXhr.responseText, textStatus, errorMessage)
                 }
+            })
+
+            let course_array = []
+            await $.ajax(`${url}/master/getCourse`, {
+                type: 'GET',
+                success: async function(innerData, status, xhr) {
+                    innerData.forEach(async(element) => {
+                        await course_array.push({
+                            "name": element.name,
+                            "alias": element.alias,
+                            "id": element.id,
+                            "code": element.course_code
+                        })
+                    });
+                },
+                error: async function(jqXhr, textStatus, errorMessage) {
+                    console.log('master/getInstitute', jqXhr.responseText)
+                }
+            })
+
+            $("#course_id").html("")
+            $("#course_id").append(`<option value="0">-----------</option>`)
+            course_array.forEach(async(element) => {
+                await $("#course_id").append(`<option title="${element.code}" value="${element.id}">${element.name}  - <b>${element.alias}</b></option>`)
+            });
+            let student_id = $("#student_id").val()
+            await $.ajax(`${url}/student/getAdmissionForm/${student_id}`, {
+                type: 'GET',
+                success: async function(data, status, xhr) {
+                    if (data.length > 0) {
+                        $('#course_id').val(data[0].course_id)
+                        let course_code = $("#course_id").find('option:selected').attr("title")
+                        const split_course_code = course_code.split("-");
+                        let course_type = split_course_code[0];
+                        // console.log(course_temp);
+                        if (course_type == "UG") {
+                            $("#qualification_for_ug").show();
+                            await $.ajax(`${url}/student/getQualification/${student_id}`, {
+                                type: 'GET',
+                                success: async function(data, status, xhr) {
+                                    console.log(data);
+                                    data.forEach(element => {
+                                        if (element.qualification_name == "HSC") {
+                                            $("#hsc_exam_body").val(element.exam_body)
+                                            $("#hsc_school_name").val(element.school_name)
+                                            $("#hsc_seat_no").val(element.seat_no)
+                                            $("#hsc_obtained_marks").val(element.obtained_marks)
+                                            $("#hsc_total_marks").val(element.total_marks)
+                                            $("#hsc_year_of_passing").val(element.year_of_passing)
+                                            $("#hsc_percentage").val(element.percentage)
+                                        }
+                                        if (element.qualification_name == "SSC") {
+                                            $("#ssc_exam_body").val(element.exam_body)
+                                            $("#ssc_school_name").val(element.school_name)
+                                            $("#ssc_seat_no").val(element.seat_no)
+                                            $("#ssc_obtained_marks").val(element.obtained_marks)
+                                            $("#ssc_total_marks").val(element.total_marks)
+                                            $("#ssc_year_of_passing").val(element.year_of_passing)
+                                            $("#ssc_percentage").val(element.percentage)
+                                        }
+                                    });
+
+                                },
+                                error: function(jqXhr, textStatus, errorMessage) {
+                                    console.log('locho', jqXhr.responseText)
+                                }
+                            });
+                        }
+                        if (course_type == "BE") {
+                            $("#qualification_for_ug").show();
+                            $("#qualification_for_engineering").show();
+                        }
+                        if (course_type == "PG") {
+                            $("#qualification_for_pg").show();
+                            await $.ajax(`${url}/student/getQualificationForUg/${userData.id}`, {
+                                type: 'GET',
+                                success: async function(data, status, xhr) {
+                                    console.log(data, status, xhr)
+                                    $("#ug_name").val(data[0].name)
+                                    $("#ug_medium").val(data[0].medium)
+                                    $("#ug_university").val(data[0].university)
+                                    $("#ug_year_of_passing").val(data[0].university)
+                                    $("#sem_1_obtain_marks").val(data[0].sem_1_obtain_marks)
+                                    $("#sem_1_out_of").val(data[0].sem_1_out_of)
+                                    $("#sem_2_obtain_marks").val(data[0].sem_2_obtain_marks)
+                                    $("#sem_2_out_of").val(data[0].sem_2_out_of)
+                                    $("#sem_3_obtain_marks").val(data[0].sem_3_obtain_marks)
+                                    $("#sem_3_out_of").val(data[0].sem_3_out_of)
+                                    $("#sem_4_obtain_marks").val(data[0].sem_4_obtain_marks)
+                                    $("#sem_4_out_of").val(data[0].sem_4_out_of)
+                                    $("#sem_5_obtain_marks").val(data[0].sem_5_obtain_marks)
+                                    $("#sem_5_out_of").val(data[0].sem_5_out_of)
+                                    $("#sem_6_obtain_marks").val(data[0].sem_6_obtain_marks)
+                                    $("#sem_6_out_of").val(data[0].sem_6_out_of)
+                                    $("#sem_7_obtain_marks").val(data[0].sem_7_obtain_marks)
+                                    $("#sem_7_out_of").val(data[0].sem_7_out_of)
+                                    $("#sem_8_obtain_marks").val(data[0].sem_8_obtain_marks)
+                                    $("#sem_8_out_of").val(data[0].sem_8_out_of)
+                                },
+                                error: function(jqXhr, textStatus, errorMessage) {
+                                    console.log('locho', jqXhr.responseText)
+                                }
+                            });
+                        }
+                    }
+                },
+                error: function(jqXhr, textStatus, errorMessage) {
+                    console.log('locho', jqXhr.responseText)
+                }
             });
 
-            $("#form_student_info").submit(async(e) => {
-                e.preventDefault()
-                var formdata = $("#form_student_info").serializeArray();
-                var data = {};
-                formdata.forEach(element => {
-                    data[element.name] = element.value;
-                });
-                data.student_registration_id = userData.id
-                await $.ajax(`${url}/student/addInfo`, {
-                    type: 'POST', // http method
-                    data: data, // data to submit
-                    success: function(data, status, xhr) {
-                        alert("Student Personal Informaition added Successfully.")
-                            //window.location.href = "login.html";
-                        window.location.href = "students.html"
-                    },
-                    error: function(jqXhr, textStatus, errorMessage) {
-                        console.log(jqXhr.responseText)
-                    }
-                });
+
+
+
+            $("#course_id").change(() => {
+                $("#qualification_for_ug").hide()
+                $("#qualification_for_engineering").hide()
+                $("#qualification_for_pg").hide()
+                $("#btn_add_details").show()
+                let course_code = $("#course_id").find('option:selected').attr("title")
+
+                const split_course_code = course_code.split("-");
+                let course_type = split_course_code[0];
+                if (course_type == "UG") {
+                    $("#qualification_for_ug").show();
+                }
+                if (course_type == "BE") {
+                    $("#qualification_for_ug").show();
+                    $("#qualification_for_engineering").show();
+                }
+                if (course_type == "PG") {
+
+                    $("#qualification_for_pg").show();
+                }
+
             })
+
         })
-    </script> -->
+    </script>
 </body>
 
 </html>
