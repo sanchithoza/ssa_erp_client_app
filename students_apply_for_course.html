@@ -309,7 +309,7 @@
                 }
                 let userData = JSON.parse(sessionStorage.getItem('user'))
                 let student_id = sessionStorage.getItem('student_id');
-
+                console.log(student_id);
                 let course_array = []
                 $('#user_name').html(userData.name)
                 await $.ajax(`${url}/master/getCourse`, {
@@ -453,7 +453,6 @@
                         data[element.name] = element.value;
                     });
                     data["course_id"] = $("#course_id").val()
-                    console.log(data["course_id"]);
                     await $.ajax(`${url}/student/addAdmissionForm`, {
                         "dataType": "json",
                         type: 'POST',
@@ -466,7 +465,7 @@
                             console.log(data, status, xhr);
                         },
                         error: function(jqxhr, textStatus, errorMessage) {
-                            console.log((errorMessage));
+                            console.log((jqxhr, textStatus, errorMessage));
                         }
                     })
                     if ($("#qualification_for_ug").is(":visible")) {

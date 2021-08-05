@@ -137,9 +137,7 @@
                 await sessionStorage.clear()
                 window.location.href = "../login.html"
             }
-
             let userData = JSON.parse(sessionStorage.getItem('user'))
-            console.log(userData.name);
             $('#user_name').html(userData.name)
             await $.ajax(`${url}/student/getRegistration`, {
                 type: 'POST', // http method
@@ -181,8 +179,6 @@
                     console.log('locho', jqXhr.responseText, textStatus, errorMessage)
                 }
             });
-
-
         })
     </script>
 </body>

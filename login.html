@@ -87,8 +87,14 @@
                                     "email": innerData[0].email,
                                     "role": data[0].role
                                 }
+                                console.log(user);
                                 sessionStorage.setItem("user", JSON.stringify(user));
-                                window.location.href = "students_dashboard.html"
+                                if (user.role == "student") {
+                                    window.location.href = "students_dashboard.html"
+                                }
+                                if (user.role == "admin") {
+                                    window.location.href = "admin_dashboard.html"
+                                }
                             },
                             error: function(jqXhr, textStatus, errorMessage) {
                                 console.log('locho', jqXhr.responseText)

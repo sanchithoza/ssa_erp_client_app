@@ -338,6 +338,8 @@
                     data: data, // data to submit
                     success: function(data, status, xhr) {
                         alert("Student Personal Informaition added Successfully.")
+                        console.log(data[0]);
+                        sessionStorage.setItem("student_id", data[0])
                             //window.location.href = "login.html";
                         window.location.href = "students_apply_for_course.html"
                     },

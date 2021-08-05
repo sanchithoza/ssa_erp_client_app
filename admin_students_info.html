@@ -51,8 +51,7 @@
                             </ol>
                         </div>
                         <ul class="nav nav-tabs page-header-tab">
-                            <li class="nav-item"><a class="nav-link" href="students_view.html">List View</a></li>
-                            <!-- <li class="nav-item"><a class="nav-link"  href="std_reg.html">Registration</a></li> -->
+
                             <li class="nav-item"><a class="nav-link active" href="students_info.html">Student Information</a></li>
                         </ul>
                     </div>
@@ -60,7 +59,6 @@
             </div>
             <div class="section-body mt-4">
                 <div class="container-fluid">
-
                     <div class="tab-pane" id="Student-add">
                         <div class="row clearfix">
                             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -610,7 +608,6 @@
                         let course_code = $("#course_id").find('option:selected').attr("title")
                         const split_course_code = course_code.split("-");
                         let course_type = split_course_code[0];
-                        // console.log(course_temp);
                         if (course_type == "UG") {
                             $("#qualification_for_ug").show();
                             await $.ajax(`${url}/student/getQualification/${student_id}`, {
@@ -647,6 +644,7 @@
                         if (course_type == "BE") {
                             $("#qualification_for_ug").show();
                             $("#qualification_for_engineering").show();
+
                         }
                         if (course_type == "PG") {
                             $("#qualification_for_pg").show();
