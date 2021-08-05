@@ -100,7 +100,9 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-12">
-                                            <button type="submit" class="btn btn-primary">Complete Your Profile</button>
+                                            <button id="complete_profile" type="submit" class="btn btn-primary">Complete Your Profile</button>
+                                            <button id="update_profile" type="submit" class="btn btn-primary">Update Your Profile</button>
+                                            <a id="track_application" class="btn btn-warning" role="button">Track My Application</a>
                                         </div>
                                     </form>
 
@@ -132,6 +134,8 @@
     <script src="header.js"></script>
     <script>
         $(document).ready(async() => {
+            $("#update_profile").hide();
+            $("#track_application").show()
             let url = "http://localhost:3000"
             if (!sessionStorage.length > 0) {
                 await sessionStorage.clear()
@@ -179,6 +183,23 @@
                     console.log('locho', jqXhr.responseText, textStatus, errorMessage)
                 }
             });
+            await $.ajax(`${url}/student/getAdmissionForm/${sessionStorage.getItem('student_id')}`, {
+                type: 'GET', // http method
+                success: async function(data, status, xhr) {
+                    if (Array.isArray(data)) {
+                        $("#complete_profile").hide()
+                        $("#update_profile").show()
+                        $("#track_application").show()
+                    }
+                    //  window.location.href = "student/std_info.html"
+                },
+                error: function(jqXhr, textStatus, errorMessage) {
+                    console.log('locho', jqXhr.responseText, textStatus, errorMessage)
+                }
+            });
+            $("#track_application").click(async() => {
+                window.location.href = "students_applied_course.html"
+            })
         })
     </script>
 </body>

@@ -72,9 +72,9 @@
                                     </div>
                                     <form class="card-body" id="form_register" action="" method="">
                                         <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Student Registration ID<span class="text-danger"></span></label>
+                                            <label class="col-md-3 col-form-label">Admission Form ID<span class="text-danger"></span></label>
                                             <div class="col-md-9">
-                                                <input type="text" name="registration_id" id="registration_id" class="form-control" placeholder="112233" readonly>
+                                                <input type="text" name="admission_form_id" id="admission_form_id" class="form-control" placeholder="112233" readonly>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -456,27 +456,26 @@
                                     </div>
                                 </form>
                                 <div class="col-sm-12">
-                                    <label class="col-md-3 col-form-label"> <b>Admission Remark</b> <span class="text-danger">*</span></label>
+                                    <label class="col-md-3 col-form-label"> <b>Admission Remark</b></label>
 
                                     <div class="form-group">
-                                        <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
+                                        <textarea id="admission_remark" rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <label class="col-md-3 col-form-label"> <b>Admission Status</b> <span class="text-danger">*</span></label>
                                     <div class="form-group">
-                                        <div class="col-md-9">
+                                        <div class="col-md-4">
                                             <select class="form-control input-height" name="admission_status" id="admission_status" required>
                                             <option value="">Select...</option>
-                                            <option value="married">Selected </option>
-                                            <option value="unmarried">Rejected</option>
+                                            <option value="approved">Approved </option>
+                                            <option value="rejected">Rejected</option>
                                         </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
-                                    <button type="submit" class="btn btn-primary">Update</button>
-                                    <button type="submit" class="btn btn-outline-secondary">Cancel</button>
+                                    <button id="update_admission_status" type="button" class="btn btn-primary">Update Status</button>
                                 </div>
                             </div>
                         </div>
@@ -604,6 +603,7 @@
                 type: 'GET',
                 success: async function(data, status, xhr) {
                     if (data.length > 0) {
+                        $('#admission_form_id').val(data[0].id)
                         $('#course_id').val(data[0].course_id)
                         let course_code = $("#course_id").find('option:selected').attr("title")
                         const split_course_code = course_code.split("-");
@@ -710,7 +710,37 @@
                 }
 
             })
-
+            $("#update_admission_status").click(async() => {
+                let status = $("#admission_status").val()
+                let remark = $("#admission_remark").val()
+                let form_id = $("#admission_form_id").val()
+                let confirmed = rejected = 0;
+                if (status == "approved") {
+                    confirmed = 1;
+                    rejected = 0;
+                } else if (status == "rejected") {
+                    confirmed = 0;
+                    rejected = 1;
+                } else {
+                    return false;
+                }
+                console.log(status, remark, form_id);
+                await $.ajax(`${url}/student/updateAdmissionForm/${form_id}`, {
+                    type: 'PATCH', // http method
+                    data: {
+                        "is_admission_confirmed": confirmed,
+                        "is_admission_rejected": rejected,
+                        "admission_remark": remark
+                    }, // data to submit
+                    success: function(data, status, xhr) {
+                        console.log(data);
+                        window.location.href = "admin_pending_applications.html"
+                    },
+                    error: function(jqXhr, textStatus, errorMessage) {
+                        console.log(jqXhr.responseText)
+                    }
+                });
+            })
         })
     </script>
 </body>
