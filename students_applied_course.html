@@ -68,8 +68,9 @@
                                             <!--<a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>-->
                                         </div>
                                     </div>
-                                    <form class="card-body" id="form_register" action="students_information.html" method="">
-                                        <table class="table table-hover table-vcenter table_custom text-nowrap spacing5 border-style mb-0">
+
+                                    <table id="tbl_applied_courses" class="table table-responsive">
+                                        <thead>
                                             <tr>
                                                 <td><strong>Course ID<strong></td>
 												<td><strong>Course Name<strong></td>
@@ -77,22 +78,11 @@
 												<td><strong>Admision Confirmed/Rejected<strong></td>
 												<td><strong>Status of Document Verification<strong></td>
 											<tr>
-											<tr>
-												<td>3</td>
-												<td>MBA</td>
-												<td>2022</td>
-												<td>Confirmed</td>
-												<td>Verified</td>
-											</tr>
-											<tr>
-												<td>7</td>
-												<td>MCA</td>
-												<td>2022</td>
-												<td>Rejected</td>
-												<td>Not Verified</td>
-											</tr>
+                                            </thead>
+                                            <tbody>
+											</tbody>
 										</table>
-                                    </form>
+                                   
                                    
                                 </div>
                             </div>
@@ -119,8 +109,9 @@
     <script src="assets/js/form/dropify.js"></script>
     <script src="assets/js/page/summernote.js"></script>
     <script src="assets/js/page/dialogs.js"></script>
+    <script src="assets/DataTables/datatables.js"></script>
     <script src="header.js"></script>
-   <!-- <script>
+    <script>
         $(document).ready(async() => {
             let url = "http://localhost:3000"
             if (!sessionStorage.length > 0) {
@@ -129,81 +120,33 @@
             }
 
             let userData = JSON.parse(sessionStorage.getItem('user'))
+            let student_id = sessionStorage.getItem("student_id")
             console.log(userData.name);
             $('#user_name').html(userData.name)
-            await $.ajax(`${url}/student/getRegistration`, {
-                type: 'POST', // http method
-                data: {
-                    "email": userData.email
-                },
-                success: async function(innerData, status, xhr) {
-
-                    $("#registration_id").val(innerData[0].id)
-                    $("#first_name").val(innerData[0].first_name)
-                    $("#last_name").val(innerData[0].last_name)
-                    $("#email").val(innerData[0].email)
-                    $("#mobile").val(innerData[0].mobile)
-
-                    //  window.location.href = "student/std_info.html"
+            $("#tbl_applied_courses").find("tbody").empty()
+            await $.ajax(`${url}/student/getAppliedCourses/${student_id}`, {
+                type: 'GET', // http method
+               
+                success: async function(data, status, xhr) {
+                    data.forEach(element => {
+                        let row = `<tr>
+                                                <td>${element.id}</td>
+												<td>${element.name}</td>
+												<td>${element.year}</td>
+												<td>${element.status}</td>
+												<td>${element.document}</td>
+											<tr>`   
+                                                $("#tbl_applied_courses").find("tbody").append(row)                   
+                    });
+                    $("#tbl_applied_courses").dataTable()
                 },
                 error: function(jqXhr, textStatus, errorMessage) {
                     console.log('locho', jqXhr.responseText)
                 }
 
             });
-            await $.ajax(`${url}/student/getStudentInfo`, {
-                type: 'POST', // http method
-                data: {
-                    "student_registration_id": userData.id
-                },
-                success: async function(data, status, xhr) {
-                    if (Array.isArray(data)) {
-                        let jsonObject = data[0]
-                        $('#form_student_info input[id]').map(function() {
-                            let inputControlId = this.id
-                            Object.keys(jsonObject).forEach(key => {
-                                    // console.log(jsonObject[key]); //values 
-                                    if (key == inputControlId) {
-                                        $(`#${inputControlId}`).val(jsonObject[key])
-                                    }
-                                })
-                                //  $('#date_of_birth').val(jsonObject.date_of_birth.format("YYYY-MM-DD"));
-                            $('#gender').val(jsonObject.gender)
-                            $('#category').val(jsonObject.category)
-                            $('#marital_status').val(jsonObject.marital_status)
-
-                        })
-                    }
-                    //  window.location.href = "student/std_info.html"
-                },
-                error: function(jqXhr, textStatus, errorMessage) {
-                    console.log('locho', jqXhr.responseText, textStatus, errorMessage)
-                }
-            });
-
-            $("#form_student_info").submit(async(e) => {
-                e.preventDefault()
-                var formdata = $("#form_student_info").serializeArray();
-                var data = {};
-                formdata.forEach(element => {
-                    data[element.name] = element.value;
-                });
-                data.student_registration_id = userData.id
-                await $.ajax(`${url}/student/addInfo`, {
-                    type: 'POST', // http method
-                    data: data, // data to submit
-                    success: function(data, status, xhr) {
-                        alert("Student Personal Informaition added Successfully.")
-                            //window.location.href = "login.html";
-                        window.location.href = "students.html"
-                    },
-                    error: function(jqXhr, textStatus, errorMessage) {
-                        console.log(jqXhr.responseText)
-                    }
-                });
-            })
-        })
-    </script> -->
+ })
+    </script> 
 </body>
 
 </html>

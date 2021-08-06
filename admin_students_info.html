@@ -674,7 +674,30 @@
                                     console.log('locho', jqXhr.responseText)
                                 }
                             });
+                            await $.ajax(`${url}/student/getQualificationForEngineering/${student_id}`, {
+                                type: 'GET',
+                                success: async function(data, status, xhr) {
+                                    console.log(data);
+                                    data.forEach(element => {
+                                        $("#chemistry_th").val(element.chemistry_th)
+                                        $("#chemistry_p").val(element.chemistry_p)
+                                        $("#physics_th").val(element.physics_th)
+                                        $("#physics_p").val(element.physics_p)
+                                        $("#computer_th").val(element.computer_th)
+                                        $("#computer_p").val(element.computer_p)
+                                        $("#maths_th").val(element.maths_th)
+                                        $("#gujcet_id").val(element.gujcet_id)
+                                        $("#gujcet_marks").val(element.gujcet_marks)
+                                        $("#acpc_merit_marks").val(element.acpc_merit_marks)
+                                        $("#acpc_merit_no").val(element.acpc_merit_no)
 
+                                    });
+
+                                },
+                                error: function(jqXhr, textStatus, errorMessage) {
+                                    console.log('locho', jqXhr.responseText)
+                                }
+                            });
 
                         }
                         if (course_type == "PG") {
