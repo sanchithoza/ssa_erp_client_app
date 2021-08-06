@@ -44,7 +44,7 @@
                 <div class="container-fluid">
                     <div class="d-flex justify-content-between align-items-center ">
                         <div class="header-action">
-                            <h1 class="page-title">Selected Applications</h1>
+                            <h1 class="page-title">Pending Applications</h1>
                             <ol class="breadcrumb page-breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">SSAGRAWAL</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Students</li>
@@ -93,16 +93,17 @@
                                 </div>
                             </div>
                             <div class="table-responsive card">
-                                <table class="table table-hover table-vcenter table-striped mb-0 text-nowrap">
+                                <table id="tbl_selected_admission" class="table table-hover table-vcenter table-striped mb-0 text-nowrap">
                                     <thead>
                                         <tr>
+                                            <th>Action</th>
                                             <th>Student ID</th>
                                             <th>Name of Student</th>
                                             <th>Department</th>
                                             <th>Email</th>
                                             <th>Mobile No.</th>
                                             <th>Admission Date</th>
-                                            <th>Action</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -154,10 +155,10 @@
                                                 <a href="admin_students_info.html"><button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button></a>
                                             </td>
                                         </tr>
-                                    
-                                   
-                                    
-          
+
+
+
+
                                     </tbody>
                                 </table>
                             </div>
@@ -186,80 +187,39 @@
     <script src="assets/js/form/dropify.js"></script>
     <script src="assets/js/page/summernote.js"></script>
     <script src="assets/js/page/dialogs.js"></script>
+    <script src="assets/DataTables/datatables.js"></script>
     <script src="header.js"></script>
     <script>
         $(document).ready(async() => {
-            await $.ajax(`${url}/student/getRegistration`, {
-                type: 'POST', // http method
-                data: {
-                    "email": userData.email
-                },
-                success: async function(innerData, status, xhr) {
-
-                    $("#registration_id").val(innerData[0].id)
-                    $("#first_name").val(innerData[0].first_name)
-                    $("#last_name").val(innerData[0].last_name)
-                    $("#email").val(innerData[0].email)
-                    $("#mobile").val(innerData[0].mobile)
-
-                    //  window.location.href = "student/std_info.html"
-                },
-                error: function(jqXhr, textStatus, errorMessage) {
-                    console.log('locho', jqXhr.responseText)
-                }
-
-            });
-            await $.ajax(`${url}/student/getStudentInfo`, {
-                type: 'POST', // http method
-                data: {
-                    "student_registration_id": userData.id
-                },
+            $("#tbl_selected_admission").find('tbody').empty()
+            await $.ajax(`${url}/student/getAdmissionSelectedStudents`, {
+                type: 'GET', // http method
                 success: async function(data, status, xhr) {
-                    if (Array.isArray(data)) {
-                        let jsonObject = data[0]
-                        $('#form_student_info input[id]').map(function() {
-                            let inputControlId = this.id
-                            Object.keys(jsonObject).forEach(key => {
-                                    // console.log(jsonObject[key]); //values 
-                                    if (key == inputControlId) {
-                                        $(`#${inputControlId}`).val(jsonObject[key])
-                                    }
-                                })
-                                //  $('#date_of_birth').val(jsonObject.date_of_birth.format("YYYY-MM-DD"));
-                            $('#gender').val(jsonObject.gender)
-                            $('#category').val(jsonObject.category)
-                            $('#marital_status').val(jsonObject.marital_status)
+                    console.log(data);
+                    await data.forEach(async(element) => {
+                        let tr = `<tr>
+                                            <td>
+                                                <a href="admin_students_info.html?reg_id=${element.student_registration_id}&course_id=${element.course_id}"><button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button></a>
+                                            </td>
+                                            <td>${element.student_id}</td>
+                                            <td>${element.name}</td>
+                                            <td>${element.course}</td>
+                                            <td>${element.email}</td>
+                                            <td>${element.mobile}</td>
+                                            <td>${element.mobile}</td>
+                                        </tr>`;
+                        $("#tbl_selected_admission").find('tbody').append(tr);
+                    });
+                    setTimeout(() => {
+                        $("#tbl_selected_admission").dataTable();
+                    }, 500);
 
-                        })
-                    }
                     //  window.location.href = "student/std_info.html"
                 },
                 error: function(jqXhr, textStatus, errorMessage) {
                     console.log('locho', jqXhr.responseText, textStatus, errorMessage)
                 }
             });
-
-            $("#form_student_info").submit(async(e) => {
-                e.preventDefault()
-                var formdata = $("#form_student_info").serializeArray();
-                var data = {};
-                formdata.forEach(element => {
-                    data[element.name] = element.value;
-                });
-                data.student_registration_id = userData.id
-                await $.ajax(`${url}/student/addInfo`, {
-                    type: 'POST', // http method
-                    data: data, // data to submit
-                    success: function(data, status, xhr) {
-                        alert("Student Personal Informaition added Successfully.")
-                            //window.location.href = "login.html";
-                        window.location.href = "students.html"
-                    },
-                    error: function(jqXhr, textStatus, errorMessage) {
-                        console.log(jqXhr.responseText)
-                    }
-                });
-            })
 
         })
     </script>

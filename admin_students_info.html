@@ -644,6 +644,37 @@
                         if (course_type == "BE") {
                             $("#qualification_for_ug").show();
                             $("#qualification_for_engineering").show();
+                            await $.ajax(`${url}/student/getQualification/${student_id}`, {
+                                type: 'GET',
+                                success: async function(data, status, xhr) {
+                                    console.log(data);
+                                    data.forEach(element => {
+                                        if (element.qualification_name == "HSC") {
+                                            $("#hsc_exam_body").val(element.exam_body)
+                                            $("#hsc_school_name").val(element.school_name)
+                                            $("#hsc_seat_no").val(element.seat_no)
+                                            $("#hsc_obtained_marks").val(element.obtained_marks)
+                                            $("#hsc_total_marks").val(element.total_marks)
+                                            $("#hsc_year_of_passing").val(element.year_of_passing)
+                                            $("#hsc_percentage").val(element.percentage)
+                                        }
+                                        if (element.qualification_name == "SSC") {
+                                            $("#ssc_exam_body").val(element.exam_body)
+                                            $("#ssc_school_name").val(element.school_name)
+                                            $("#ssc_seat_no").val(element.seat_no)
+                                            $("#ssc_obtained_marks").val(element.obtained_marks)
+                                            $("#ssc_total_marks").val(element.total_marks)
+                                            $("#ssc_year_of_passing").val(element.year_of_passing)
+                                            $("#ssc_percentage").val(element.percentage)
+                                        }
+                                    });
+
+                                },
+                                error: function(jqXhr, textStatus, errorMessage) {
+                                    console.log('locho', jqXhr.responseText)
+                                }
+                            });
+
 
                         }
                         if (course_type == "PG") {

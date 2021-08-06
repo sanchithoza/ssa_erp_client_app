@@ -135,7 +135,7 @@
     <script>
         $(document).ready(async() => {
             $("#update_profile").hide();
-            $("#track_application").show()
+            $("#track_application").hide()
             let url = "http://localhost:3000"
             if (!sessionStorage.length > 0) {
                 await sessionStorage.clear()
