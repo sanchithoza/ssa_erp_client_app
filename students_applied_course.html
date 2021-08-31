@@ -76,7 +76,8 @@
 												<td><strong>Course Name<strong></td>
 												<td><strong>Admision Year<strong></td>
 												<td><strong>Admision Confirmed/Rejected<strong></td>
-												<td><strong>Status of Document Verification<strong></td>
+                                                <td><strong>Upload Document </strong></td>
+                                                <td><strong>Status of Document Verification<strong></td>
 											<tr>
                                             </thead>
                                             <tbody>
@@ -129,16 +130,29 @@
                
                 success: async function(data, status, xhr) {
                     data.forEach(element => {
+                        console.log(element);
                         let row = `<tr>
                                                 <td>${element.id}</td>
 												<td>${element.name}</td>
 												<td>${element.year}</td>
 												<td>${element.status}</td>
+                                                <td><a class="btn btn-primary upload_document" type="button" href="students_document_upload.html?course=${element.id}">Upload Document</a>
 												<td>${element.document}</td>
 											<tr>`   
                                                 $("#tbl_applied_courses").find("tbody").append(row)                   
                     });
-                    $("#tbl_applied_courses").dataTable()
+                   // $("#tbl_applied_courses").dataTable()
+                    $("#tbl_applied_courses tbody tr").each(function () {
+                    var self = $(this);
+                    var application_status = self.find("td:eq(3)").text().trim();
+                    
+                        if(application_status != "confirmed" ){
+                            console.log(application_status);
+                            self.find(".upload_document").hide()
+                        }
+                    //var result = col_4_value;
+                   
+                });
                 },
                 error: function(jqXhr, textStatus, errorMessage) {
                     console.log('locho', jqXhr.responseText)

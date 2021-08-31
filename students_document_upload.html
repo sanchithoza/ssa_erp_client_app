@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head id="headSection">
+
+</head>
+
+<body class="font-muli theme-cyan gradient">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+        </div>
+    </div>
+
+    <div id="main_content">
+        <!-- Start Main top header -->
+        <div id="header_top" class="header_top">
+            <div class="container">
+
+                <div class="hleft">
+                    <a class="header-brand" href="index.html"><i class="fa fa-graduation-cap brand-logo"></i></a>
+                    <div class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
+                    </div>
+                </div>
+                <div class="hright">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Main leftbar navigation -->
+        <div id="left-sidebar" class="sidebar">
+
+        </div>
+        <!-- Start project content area -->
+        <div class="page">
+            <!-- Start Page header -->
+            <div class="section-body" id="page_top">
+
+            </div>
+            <!-- Start Page title and tab -->
+            <div class="section-body">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between align-items-center ">
+                        <div class="header-action">
+                            <h1 class="page-title">Students</h1>
+                            <ol class="breadcrumb page-breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">SSAGRAWAL</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Students</li>
+                            </ol>
+                        </div>
+                        <ul class="nav nav-tabs page-header-tab">
+                            <li class="nav-item"><a class="nav-link active" href="students_info.html">Student Information</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section-body mt-4">
+                <div class="container-fluid">
+
+                    <div class="tab-pane" id="upload_document">
+                        <div class="row clearfix">
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Upload Documents</h3>
+                                        <div class="card-options ">
+                                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                            <!--<a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>-->
+                                        </div>
+                                    </div>
+                                    <form class="card-body" id="form_student_info">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Student Photo</label>
+                                            <div class="">
+                                                <input type="file" name="photo" id="photo" class="dropify" required>
+                                                <small id="fileHelp" class="form-text text-muted">Kindly upload you passport size photograph</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" id="ssc_marksheet_div" hidden="hidden">
+                                            <label class="col-form-label">S.S.C. MARKSHEET</label>
+                                            <div class="">
+                                                <input type="file" name="ssc_marksheet" id="ssc_marksheet" class="dropify" required>
+                                                <small id="fileHelp" class="form-text text-muted">Upload PDF/JPG of 10th marksheet</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" id="hsc_marksheet_div" hidden="hidden">
+                                            <label class="col-form-label">H.S.C. MARKSHEET</label>
+                                            <div class="">
+                                                <input type="file" name="hsc_marksheet" id="hsc_marksheet" class="dropify" required>
+                                                <small id="fileHelp" class="form-text text-muted">Upload PDF/JPG of 12th marksheet</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" id="cast_certification_div" hidden="hidden">
+                                            <label class="col-form-label">CAST CERTIFICATE</label>
+                                            <div class="">
+                                                <input type="file" name="cast_certificate" id="cast_certificate" class="dropify" required>
+                                                <small id="fileHelp" class="form-text text-muted">Upload PDF/JPG of Cast Certificate</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" id="ncl_certificate_div" hidden="hidden">
+                                            <label class="col-form-label">NON CREAMY LAYER CERTIFICATE</label>
+                                            <div class="">
+                                                <input type="file" name="ncl_certificate" id="ncl_certificate" class="dropify" required>
+                                                <small id="fileHelp" class="form-text text-muted">Upload PDF/JPG of Non Creamy Layer Certificate</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" id="ug_marksheet_div" hidden="hidden">
+                                            <label class="col-form-label">UNDER GRADUATE MARKSHEETS</label>
+                                            <div class="">
+                                                <input type="file" name="ug_marksheet" id="ug_marksheet" class="dropify" required>
+                                                <small id="fileHelp" class="form-text text-muted">Upload a single PDF of each Under Graduate Marksheet</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12">
+                                            <button id="btn_submit" type="submit" class="btn btn-primary">SUBMIT</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Basic Information</h3>
+                                        <div class="card-options ">
+                                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                            <!--<a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>-->
+                                        </div>
+                                    </div>
+                                    <form class="card-body" id="form_register" action="" method="">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Student Registration ID<span class="text-danger"></span></label>
+                                            <div class="">
+                                                <input type="text" name="registration_id" id="registration_id" class="form-control" placeholder="112233" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class=" col-form-label">First Name<span class="text-danger"></span></label>
+                                            <div class="">
+                                                <input type="text" id="first_name" name="first_name" class="form-control" aria-describedby="emailHelp" placeholder="First Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Last Name<span class="text-danger"></span></label>
+                                            <div class="">
+                                                <input type="text" id="last_name" name="last_name" class="form-control" aria-describedby="emailHelp" placeholder="Last Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Email<span class="text-danger"></span></label>
+                                            <div class="">
+                                                <input type="email" id="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Mobile Number<span class="text-danger"></span></label>
+                                            <div class="">
+                                                <input type="text" id="mobile" name="mobile" class="form-control" aria-describedby="emailHelp" placeholder="Mobile Number" required>
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Start Main project js, jQuery, Bootstrap -->
+    <script src="assets/bundles/lib.vendor.bundle.js"></script>
+
+    <!-- Start Plugin Js -->
+    <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/plugins/dropify/js/dropify.min.js"></script>
+    <script src="assets/bundles/summernote.bundle.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Start project main js  and page js -->
+    <script src="assets/js/core.js"></script>
+    <script src="assets/js/form/dropify.js"></script>
+    <script src="assets/js/page/summernote.js"></script>
+    <script src="assets/js/page/dialogs.js"></script>
+    <script src="header.js"></script>
+    <script>
+        $(document).ready(async() => {
+            let url = "http://localhost:3000"
+            if (!sessionStorage.length > 0) {
+                await sessionStorage.clear()
+                window.location.href = "../login.html"
+            }
+            const urlParams = new URLSearchParams(window.location.search);
+            const course_id = urlParams.get('course');
+            await $.ajax(`${url}/master/getCourse/${course_id}`, {
+                type: 'GET',
+                success: async function(data, status, xhr) {
+                    let course_code = data[0].course_code;
+
+                    const split_course_code = course_code.split("-");
+                    let course_type = split_course_code[0];
+                    console.log("course_type", course_type);
+                },
+                error: async function(jqXhr, textStatus, errorMessage) {
+                    console.log('locho', jqXhr.responseText)
+                }
+            })
+            let userData = JSON.parse(sessionStorage.getItem('user'))
+            console.log(userData);
+            $('#user_name').html(userData.name)
+            await $.ajax(`${url}/student/getRegistration`, {
+                type: 'POST', // http method
+                data: {
+                    "email": userData.email
+                },
+                success: async function(innerData, status, xhr) {
+
+                    $("#registration_id").val(innerData[0].id)
+                    $("#first_name").val(innerData[0].first_name)
+                    $("#last_name").val(innerData[0].last_name)
+                    $("#email").val(innerData[0].email)
+                    $("#mobile").val(innerData[0].mobile)
+
+                    //  window.location.href = "student/std_info.html"
+                },
+                error: function(jqXhr, textStatus, errorMessage) {
+                    console.log('locho', jqXhr.responseText)
+                }
+
+            });
+            await $.ajax(`${url}/student/getStudentInfo`, {
+                type: 'POST', // http method
+                data: {
+                    "student_registration_id": userData.id
+                },
+                success: async function(data, status, xhr) {
+                    if (Array.isArray(data)) {
+                        let jsonObject = data[0];
+                        console.log(jsonObject);
+                        $("#ssc_marksheet_div").removeAttr("hidden")
+                    }
+                    //  window.location.href = "student/std_info.html"
+                },
+                error: function(jqXhr, textStatus, errorMessage) {
+                    console.log('locho', jqXhr.responseText, textStatus, errorMessage)
+                }
+            });
+
+            $("#form_student_info").submit(async(e) => {
+                e.preventDefault()
+            })
+        })
+    </script>
+</body>
+
+</html>
