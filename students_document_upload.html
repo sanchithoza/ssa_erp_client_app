@@ -70,9 +70,9 @@
                                             <!--<a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>-->
                                         </div>
                                     </div>
-                                    <form class="card-body" id="form_student_info">
+                                    <form class="card-body" id="form_student_upload_document">
                                         <div class="form-group">
-                                            <label class="col-form-label">Student Photo</label>
+                                            <label class="col-form-label">STUDENT PHOTO</label>
                                             <div class="">
                                                 <input type="file" name="photo" id="photo" class="dropify" required>
                                                 <small id="fileHelp" class="form-text text-muted">Kindly upload you passport size photograph</small>
@@ -92,7 +92,7 @@
                                                 <small id="fileHelp" class="form-text text-muted">Upload PDF/JPG of 12th marksheet</small>
                                             </div>
                                         </div>
-                                        <div class="form-group" id="cast_certification_div" hidden="hidden">
+                                        <div class="form-group" id="cast_certificate_div" hidden="hidden">
                                             <label class="col-form-label">CAST CERTIFICATE</label>
                                             <div class="">
                                                 <input type="file" name="cast_certificate" id="cast_certificate" class="dropify" required>
@@ -204,10 +204,16 @@
                 type: 'GET',
                 success: async function(data, status, xhr) {
                     let course_code = data[0].course_code;
-
                     const split_course_code = course_code.split("-");
                     let course_type = split_course_code[0];
                     console.log("course_type", course_type);
+                    if (course_type == "UG" || course_type == "BE") {
+                        $("#ssc_marksheet_div").removeAttr("hidden")
+                        $("#hsc_marksheet_div").removeAttr("hidden")
+                    }
+                    if (course_type == "PG") {
+                        $("#ug_marksheet_div").removeAttr("hidden")
+                    }
                 },
                 error: async function(jqXhr, textStatus, errorMessage) {
                     console.log('locho', jqXhr.responseText)
@@ -245,7 +251,12 @@
                     if (Array.isArray(data)) {
                         let jsonObject = data[0];
                         console.log(jsonObject);
-                        $("#ssc_marksheet_div").removeAttr("hidden")
+                        if (jsonObject.category == "sc" || jsonObject.category == "st" || jsonObject.category == "sebc") {
+                            $("#cast_certificate_div").removeAttr("hidden");
+                            if (jsonObject.category == "sebc") {
+                                $("#ncl_certificate_div").removeAttr("hidden");
+                            }
+                        }
                     }
                     //  window.location.href = "student/std_info.html"
                 },
@@ -254,7 +265,7 @@
                 }
             });
 
-            $("#form_student_info").submit(async(e) => {
+            $("#form_student_upload_document").submit(async(e) => {
                 e.preventDefault()
             })
         })
