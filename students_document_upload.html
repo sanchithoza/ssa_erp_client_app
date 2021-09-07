@@ -70,14 +70,17 @@
                                             <!--<a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>-->
                                         </div>
                                     </div>
-                                    <form class="card-body" id="form_student_upload_document">
+                                    <form class="card-body" id="upload_photo" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label class="col-form-label">STUDENT PHOTO</label>
                                             <div class="">
-                                                <input type="file" name="photo" id="photo" class="dropify" required>
+                                                <input type="file" name="photo" id="photo" class="form-control" required>
                                                 <small id="fileHelp" class="form-text text-muted">Kindly upload you passport size photograph</small>
                                             </div>
+                                            <button id="btn_submit" type="submit" class="btn btn-primary">Upload Photo</button>
                                         </div>
+                                    </form>
+                                    <form class="card-body" id="upload_photo">
                                         <div class="form-group" id="ssc_marksheet_div" hidden="hidden">
                                             <label class="col-form-label">S.S.C. MARKSHEET</label>
                                             <div class="">
@@ -85,6 +88,8 @@
                                                 <small id="fileHelp" class="form-text text-muted">Upload PDF/JPG of 10th marksheet</small>
                                             </div>
                                         </div>
+                                    </form>
+                                    <form class="card-body" id="upload_photo">
                                         <div class="form-group" id="hsc_marksheet_div" hidden="hidden">
                                             <label class="col-form-label">H.S.C. MARKSHEET</label>
                                             <div class="">
@@ -92,6 +97,8 @@
                                                 <small id="fileHelp" class="form-text text-muted">Upload PDF/JPG of 12th marksheet</small>
                                             </div>
                                         </div>
+                                    </form>
+                                    <form class="card-body" id="upload_photo">
                                         <div class="form-group" id="cast_certificate_div" hidden="hidden">
                                             <label class="col-form-label">CAST CERTIFICATE</label>
                                             <div class="">
@@ -99,6 +106,8 @@
                                                 <small id="fileHelp" class="form-text text-muted">Upload PDF/JPG of Cast Certificate</small>
                                             </div>
                                         </div>
+                                    </form>
+                                    <form class="card-body" id="upload_photo">
                                         <div class="form-group" id="ncl_certificate_div" hidden="hidden">
                                             <label class="col-form-label">NON CREAMY LAYER CERTIFICATE</label>
                                             <div class="">
@@ -106,6 +115,8 @@
                                                 <small id="fileHelp" class="form-text text-muted">Upload PDF/JPG of Non Creamy Layer Certificate</small>
                                             </div>
                                         </div>
+                                    </form>
+                                    <form class="card-body" id="upload_photo">
                                         <div class="form-group" id="ug_marksheet_div" hidden="hidden">
                                             <label class="col-form-label">UNDER GRADUATE MARKSHEETS</label>
                                             <div class="">
@@ -113,10 +124,10 @@
                                                 <small id="fileHelp" class="form-text text-muted">Upload a single PDF of each Under Graduate Marksheet</small>
                                             </div>
                                         </div>
-
-                                        <div class="col-sm-12">
-                                            <button id="btn_submit" type="submit" class="btn btn-primary">SUBMIT</button>
-                                        </div>
+                                    </form>
+                                    <div class="col-sm-12">
+                                        <button id="btn_submit" type="submit" class="btn btn-primary">SUBMIT</button>
+                                    </div>
                                     </form>
                                 </div>
                             </div>
@@ -265,8 +276,33 @@
                 }
             });
 
-            $("#form_student_upload_document").submit(async(e) => {
-                e.preventDefault()
+            $("#upload_photo").submit(async(e) => {
+                e.preventDefault();
+                // retrieve form element
+                var form = $('#upload_photo')[0];
+                // prepare data
+                var data = new FormData(form);
+                console.log(form);
+                data.append("Q", "This is some extra data, testing");
+                // get url
+                // send request
+                $.ajax({
+                    type: "POST",
+                    enctype: 'multipart/form-data',
+                    url: `${url}/student/upload`,
+                    data: data,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    timeout: 800000,
+                    success: function(data) {
+                        console.log("SUCCESS : ", data);
+                    },
+                    error: function(e) {
+                        console.log("ERROR : ", e);
+                    }
+                });
+
             })
         })
     </script>
