@@ -71,13 +71,18 @@
                                         </div>
                                     </div>
                                     <form class="card-body" id="upload_photo" enctype="multipart/form-data">
-                                        <div class="form-group">
-                                            <label class="col-form-label">STUDENT PHOTO</label>
-                                            <div class="">
-                                                <input type="file" name="photo" id="photo" class="form-control" required>
-                                                <small id="fileHelp" class="form-text text-muted">Kindly upload you passport size photograph</small>
+                                        <div class="form-group row">
+                                            <div class="col-md-8">
+                                                <label class="col-form-label">STUDENT PHOTO</label>
+                                                <div class="">
+                                                    <input type="file" name="photo" id="photo" class="form-control" required>
+                                                    <small id="fileHelp" class="form-text text-muted">Kindly upload you passport size photograph</small>
+                                                </div>
+                                                <button id="btn_submit" type="submit" class="btn btn-primary">Upload Photo</button>
                                             </div>
-                                            <button id="btn_submit" type="submit" class="btn btn-primary">Upload Photo</button>
+                                            <div class="col-md-4">
+                                                <img id="passportPhoto" class="img img-responsive" />
+                                            </div>
                                         </div>
                                     </form>
                                     <form class="card-body" id="upload_photo">
@@ -211,6 +216,7 @@
             }
             const urlParams = new URLSearchParams(window.location.search);
             const course_id = urlParams.get('course');
+            //$("#passportPhoto").attr("src", `${url}/uploads/photo`)
             await $.ajax(`${url}/master/getCourse/${course_id}`, {
                 type: 'GET',
                 success: async function(data, status, xhr) {
@@ -230,8 +236,18 @@
                     console.log('locho', jqXhr.responseText)
                 }
             })
+
             let userData = JSON.parse(sessionStorage.getItem('user'))
             console.log(userData);
+            await $.ajax(`${url}/student/checkFolder/${userData.id}`, {
+                type: 'GET',
+                success: async function(data, status, xhr) {
+                    console.log('locho nathi', data)
+                },
+                error: async function(jqXhr, textStatus, errorMessage) {
+                    console.log('locho', jqXhr.responseText)
+                }
+            })
             $('#user_name').html(userData.name)
             await $.ajax(`${url}/student/getRegistration`, {
                 type: 'POST', // http method
@@ -283,13 +299,13 @@
                 // prepare data
                 var data = new FormData(form);
                 console.log(form);
-                data.append("Q", "This is some extra data, testing");
+                data.append("data", "This is some extra data, testing");
                 // get url
                 // send request
                 $.ajax({
                     type: "POST",
                     enctype: 'multipart/form-data',
-                    url: `${url}/student/upload`,
+                    url: `${url}/student/upload/${userData.id}`,
                     data: data,
                     processData: false,
                     contentType: false,
