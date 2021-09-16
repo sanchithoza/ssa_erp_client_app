@@ -72,16 +72,16 @@
                                     </div>
                                     <form class="card-body" id="upload_photo" enctype="multipart/form-data">
                                         <div class="form-group row">
-                                            <div class="col-md-8">
+                                            <div class="col-md-9">
                                                 <label class="col-form-label">STUDENT PHOTO</label>
                                                 <div class="">
-                                                    <input type="file" name="photo" id="photo" class="form-control" required>
+                                                    <input type="file" name="pp" id="photo" class="form-control" required>
                                                     <small id="fileHelp" class="form-text text-muted">Kindly upload you passport size photograph</small>
                                                 </div>
                                                 <button id="btn_submit" type="submit" class="btn btn-primary">Upload Photo</button>
                                             </div>
-                                            <div class="col-md-4">
-                                                <img id="passportPhoto" class="img img-responsive" />
+                                            <div class="col-md-3">
+                                                <img id="passportPhoto" alt="photo not available" height="150px" class="img img-responsive" />
                                             </div>
                                         </div>
                                     </form>
@@ -89,7 +89,7 @@
                                         <div class="form-group" id="ssc_marksheet_div" hidden="hidden">
                                             <label class="col-form-label">S.S.C. MARKSHEET</label>
                                             <div class="">
-                                                <input type="file" name="ssc_marksheet" id="ssc_marksheet" class="dropify" required>
+                                                <input type="file" name="ssc" id="ssc_marksheet" class="dropify" required>
                                                 <small id="fileHelp" class="form-text text-muted">Upload PDF/JPG of 10th marksheet</small>
                                             </div>
                                         </div>
@@ -98,7 +98,7 @@
                                         <div class="form-group" id="hsc_marksheet_div" hidden="hidden">
                                             <label class="col-form-label">H.S.C. MARKSHEET</label>
                                             <div class="">
-                                                <input type="file" name="hsc_marksheet" id="hsc_marksheet" class="dropify" required>
+                                                <input type="file" name="hsc" id="hsc_marksheet" class="dropify" required>
                                                 <small id="fileHelp" class="form-text text-muted">Upload PDF/JPG of 12th marksheet</small>
                                             </div>
                                         </div>
@@ -136,7 +136,6 @@
                                     </form>
                                 </div>
                             </div>
-
                             <div class="col-md-4">
                                 <div class="card">
                                     <div class="card-header">
@@ -216,7 +215,7 @@
             }
             const urlParams = new URLSearchParams(window.location.search);
             const course_id = urlParams.get('course');
-            //$("#passportPhoto").attr("src", `${url}/uploads/photo`)
+
             await $.ajax(`${url}/master/getCourse/${course_id}`, {
                 type: 'GET',
                 success: async function(data, status, xhr) {
@@ -243,11 +242,13 @@
                 type: 'GET',
                 success: async function(data, status, xhr) {
                     console.log('locho nathi', data)
+
                 },
                 error: async function(jqXhr, textStatus, errorMessage) {
                     console.log('locho', jqXhr.responseText)
                 }
             })
+            $("#passportPhoto").attr("src", `${url}/student/photo/pp/${userData.id}`)
             $('#user_name').html(userData.name)
             await $.ajax(`${url}/student/getRegistration`, {
                 type: 'POST', // http method
@@ -298,7 +299,7 @@
                 var form = $('#upload_photo')[0];
                 // prepare data
                 var data = new FormData(form);
-                console.log(form);
+                console.log(data);
                 data.append("data", "This is some extra data, testing");
                 // get url
                 // send request
